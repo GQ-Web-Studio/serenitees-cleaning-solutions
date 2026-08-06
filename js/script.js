@@ -1,3 +1,5 @@
+document.documentElement.classList.add("has-reveal-motion");
+
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("[data-site-header]");
 
@@ -63,4 +65,26 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   desktopMedia.addEventListener?.("change", handleBreakpointChange);
+
+  const revealGroups = document.querySelectorAll("[data-reveal-group]");
+
+  if (revealGroups.length) {
+    if (!("IntersectionObserver" in window)) {
+      revealGroups.forEach((group) => group.classList.add("is-revealed"));
+    } else {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-revealed");
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.16,
+        rootMargin: "0px 0px -4% 0px"
+      });
+
+      revealGroups.forEach((group) => revealObserver.observe(group));
+    }
+  }
 });
