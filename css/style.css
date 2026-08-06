@@ -477,6 +477,276 @@
   text-wrap: balance;
 }
 
+.cleaning-services {
+  color: #0b090b;
+  scroll-margin-top: calc(var(--header-height) + 2rem);
+  background-color: #f4f9f8;
+  background-image: url("../media/texture/texture-8.webp");
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 680px 680px;
+  background-blend-mode: multiply;
+}
+
+.cleaning-services,
+.cleaning-services *,
+.cleaning-services *::before,
+.cleaning-services *::after {
+  box-sizing: border-box;
+}
+
+.cleaning-services__inner {
+  width: min(100%, calc(var(--header-max-width) + (var(--header-pad-x) * 2)));
+  padding: clamp(4rem, 7vw, 6.25rem) var(--header-pad-x) clamp(4.5rem, 8vw, 7rem);
+  margin: 0 auto;
+}
+
+.cleaning-services__title {
+  padding-bottom: 0.08em;
+  margin: 0;
+  color: #0b090b;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.75rem, 5vw, 4.75rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.cleaning-services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-top: clamp(2.25rem, 4.5vw, 3.75rem);
+}
+
+.cleaning-service-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  overflow: hidden;
+  background-color: #f1f6f5;
+  background-image: url("../media/texture/texture-11.webp");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 420px 420px;
+  border: 1px solid rgba(61, 129, 127, 0.24);
+  border-radius: 1.4rem;
+  box-shadow: 0 20px 48px rgba(26, 52, 52, 0.12);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.cleaning-service-card:hover,
+.cleaning-service-card:focus-within {
+  border-color: rgba(61, 129, 127, 0.42);
+  box-shadow: 0 26px 58px rgba(26, 52, 52, 0.18);
+  transform: translateY(-0.35rem) scale(1.018);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  transition-delay: 0ms;
+}
+
+.cleaning-service-card:active {
+  transform: translateY(-0.12rem) scale(1.006);
+}
+
+.cleaning-service-card__media {
+  aspect-ratio: 16 / 9;
+  margin: clamp(0.75rem, 1.5vw, 1rem) clamp(0.75rem, 1.5vw, 1rem) 0;
+  padding: 0.35rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(69, 64, 68, 0.22);
+  border-radius: 1rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 10px 24px rgba(26, 52, 52, 0.09);
+}
+
+.cleaning-service-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.72rem;
+}
+
+.cleaning-service-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.25rem, 2.8vw, 2rem);
+}
+
+.cleaning-service-card__title {
+  margin: 0;
+  color: #0b090b;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.cleaning-service-card__description {
+  margin: 0.85rem 0 0;
+  color: #454044;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.cleaning-service-card__highlights {
+  display: grid;
+  width: 100%;
+  gap: 0.65rem;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  list-style: none;
+}
+
+.cleaning-service-card__highlights li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 2.7rem;
+  padding: 0.58rem 0.75rem;
+  color: #454044;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.82rem, 1.15vw, 0.94rem);
+  font-weight: 600;
+  line-height: 1.35;
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(69, 64, 68, 0.13);
+  border-radius: 0.8rem;
+}
+
+.cleaning-service-card__tick {
+  display: inline-block;
+  width: 1.15rem;
+  color: transparent;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(110deg, #3d817f 10%, #d6a44a 45%, #3d817f 80%);
+  background-position: 0% center;
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: cleaning-tick-sweep 3.6s ease-in-out infinite;
+}
+
+.cleaning-service-card__highlights li:nth-child(2) .cleaning-service-card__tick {
+  animation-delay: 240ms;
+}
+
+.cleaning-service-card__highlights li:nth-child(3) .cleaning-service-card__tick {
+  animation-delay: 480ms;
+}
+
+.cleaning-service-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.85rem 1.2rem;
+  margin-top: 1.5rem;
+  color: #fafafa;
+  font: 700 0.9rem/1 "Manrope", sans-serif;
+  text-decoration: none;
+  text-shadow: 0 1px 2px #0c0a09;
+  background-color: #d6a44a;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(12, 10, 9, 0.16);
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.cleaning-service-card__cta:hover,
+.cleaning-service-card__cta:focus-visible {
+  box-shadow: 0 11px 28px rgba(12, 10, 9, 0.22);
+  transform: scale(1.04);
+}
+
+.cleaning-service-card__cta:active {
+  transform: scale(0.98);
+}
+
+.cleaning-service-card__cta:focus-visible {
+  outline: 3px solid #3d817f;
+  outline-offset: 4px;
+}
+
+.has-reveal-motion .cleaning-services [data-reveal-item] {
+  opacity: 0;
+  will-change: opacity, transform, filter, clip-path;
+}
+
+.has-reveal-motion .cleaning-services__title[data-reveal-item] {
+  filter: blur(3px);
+  letter-spacing: -0.06em;
+  transform: translateY(0.75rem) scaleX(0.96);
+  transition:
+    opacity 620ms ease,
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 620ms ease,
+    letter-spacing 760ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.has-reveal-motion .cleaning-service-card[data-reveal-item] {
+  clip-path: inset(0 0 1.25rem 0 round 1.4rem);
+  filter: blur(4px);
+  transform: translate3d(-0.7rem, 1.35rem, 0) scale(0.985);
+  transition:
+    opacity 660ms ease 150ms,
+    transform 820ms cubic-bezier(0.22, 1, 0.36, 1) 150ms,
+    filter 660ms ease 150ms,
+    clip-path 820ms cubic-bezier(0.22, 1, 0.36, 1) 150ms;
+}
+
+.has-reveal-motion .cleaning-service-card:nth-child(2)[data-reveal-item] {
+  transform: translate3d(0.7rem, 1.35rem, 0) scale(0.985);
+  transition-delay: 250ms;
+}
+
+.has-reveal-motion .cleaning-services [data-reveal-item].is-revealed {
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.has-reveal-motion .cleaning-services .cleaning-services__title.is-revealed {
+  letter-spacing: -0.025em;
+}
+
+.has-reveal-motion .cleaning-services .cleaning-service-card.is-revealed:hover,
+.has-reveal-motion .cleaning-services .cleaning-service-card.is-revealed:focus-within {
+  border-color: rgba(61, 129, 127, 0.42);
+  box-shadow: 0 26px 58px rgba(26, 52, 52, 0.18);
+  transform: translateY(-0.35rem) scale(1.018);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  transition-delay: 0ms;
+}
+
+.has-reveal-motion .cleaning-services .cleaning-service-card.is-revealed:active {
+  transform: translateY(-0.12rem) scale(1.006);
+}
+
+@keyframes cleaning-tick-sweep {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+}
+
 .has-reveal-motion .home-hero [data-reveal-item],
 .has-reveal-motion .trust-strip [data-reveal-item] {
   opacity: 0;
@@ -652,6 +922,32 @@
   }
 }
 
+@media (max-width: 760px) {
+  .cleaning-services {
+    background-size: 520px 520px;
+  }
+
+  .cleaning-services__inner {
+    padding-top: 3.75rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .cleaning-services__grid {
+    grid-template-columns: 1fr;
+    width: min(100%, 44rem);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .cleaning-service-card__body {
+    padding: 1.25rem;
+  }
+
+  .cleaning-service-card__title {
+    font-size: clamp(2rem, 8vw, 2.65rem);
+  }
+}
+
 @media (max-width: 480px) {
   :root {
     --header-height: 4.5rem;
@@ -745,5 +1041,17 @@
     filter: none !important;
     transform: none !important;
     transition: none !important;
+  }
+
+  .cleaning-service-card__tick {
+    animation: none;
+    background-position: 50% center;
+  }
+
+  .cleaning-service-card__cta,
+  .cleaning-service-card__cta:hover,
+  .cleaning-service-card__cta:focus-visible,
+  .cleaning-service-card__cta:active {
+    transform: none;
   }
 }

@@ -67,24 +67,69 @@ document.addEventListener("DOMContentLoaded", () => {
   desktopMedia.addEventListener?.("change", handleBreakpointChange);
 
   const revealGroups = document.querySelectorAll("[data-reveal-group]");
+  const individualRevealItems = document.querySelectorAll("[data-reveal-individually] [data-reveal-item]");
+  const individualRevealTitles = document.querySelectorAll("[data-reveal-individually] .cleaning-services__title[data-reveal-item]");
+  const individualRevealCards = document.querySelectorAll("[data-reveal-individually] .cleaning-service-card[data-reveal-item]");
 
-  if (revealGroups.length) {
+  if (revealGroups.length || individualRevealItems.length) {
     if (!("IntersectionObserver" in window)) {
       revealGroups.forEach((group) => group.classList.add("is-revealed"));
+      individualRevealItems.forEach((item) => item.classList.add("is-revealed"));
     } else {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
+      const revealOnce = (entries, observer) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
 
           entry.target.classList.add("is-revealed");
           observer.unobserve(entry.target);
         });
-      }, {
+      };
+
+      const revealObserver = new IntersectionObserver(revealOnce, {
         threshold: 0.16,
         rootMargin: "0px 0px -4% 0px"
       });
 
+      const individualTitleObserver = new IntersectionObserver(revealOnce, {
+        threshold: 0.3,
+        rootMargin: "0px 0px -8% 0px"
+      });
+
+      const createIndividualCardObserver = () => new IntersectionObserver(revealOnce, {
+        threshold: 0.01,
+        rootMargin: desktopMedia.matches
+          ? "0px 0px -20% 0px"
+          : "0px 0px -16% 0px"
+      });
+
+      let individualCardObserver = createIndividualCardObserver();
+
       revealGroups.forEach((group) => revealObserver.observe(group));
+      individualRevealTitles.forEach((title) => individualTitleObserver.observe(title));
+      individualRevealCards.forEach((card) => {
+        const cardImage = card.querySelector(".cleaning-service-card__image");
+        const observeCard = () => individualCardObserver.observe(card);
+
+        if (!cardImage || cardImage.complete) {
+          observeCard();
+          return;
+        }
+
+        cardImage.addEventListener("load", observeCard, { once: true });
+        cardImage.addEventListener("error", observeCard, { once: true });
+      });
+
+      desktopMedia.addEventListener?.("change", () => {
+        individualCardObserver.disconnect();
+        individualCardObserver = createIndividualCardObserver();
+
+        individualRevealCards.forEach((card) => {
+          if (card.classList.contains("is-revealed")) return;
+
+          const cardImage = card.querySelector(".cleaning-service-card__image");
+          if (!cardImage || cardImage.complete) individualCardObserver.observe(card);
+        });
+      });
     }
   }
 });
