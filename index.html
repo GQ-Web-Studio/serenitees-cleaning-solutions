@@ -14,6 +14,9 @@
 
   <link rel="canonical" href="https://www.FINAL-DOMAIN.com/">
   <link rel="icon" href="media/logo/favicon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <meta property="og:site_name" content="Serenitees Cleaning Solutions">
@@ -28,6 +31,43 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-header__logo-link" href="index.html" aria-label="Serenitees Cleaning Solutions home">
+        <img class="site-header__logo" src="media/logo/favicon.webp" alt="Serenitees Cleaning Solutions" width="60" height="60">
+      </a>
+
+      <nav class="site-header__nav" aria-label="Primary navigation">
+        <ul class="site-header__nav-list">
+          <li><a class="site-header__nav-link" href="index.html" aria-current="page">Home</a></li>
+          <li><a class="site-header__nav-link" href="html/about.html">About</a></li>
+          <li><a class="site-header__nav-link" href="index.html#services">Services</a></li>
+          <li><a class="site-header__nav-link" href="html/contact.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="site-header__cta" href="html/contact.html#contact">Request a Quote</a>
+
+      <button class="site-header__menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation menu" data-menu-toggle>
+        <span class="site-header__menu-icon" aria-hidden="true">
+          <span class="site-header__menu-line"></span>
+          <span class="site-header__menu-line"></span>
+          <span class="site-header__menu-line"></span>
+        </span>
+      </button>
+    </div>
+
+    <nav class="site-header__mobile-menu" id="mobile-navigation" aria-label="Mobile navigation" aria-hidden="true" inert data-mobile-menu>
+      <ul class="site-header__mobile-nav-list">
+        <li><a class="site-header__mobile-nav-link" href="index.html" aria-current="page">Home</a></li>
+        <li><a class="site-header__mobile-nav-link" href="html/about.html">About</a></li>
+        <li><a class="site-header__mobile-nav-link" href="index.html#services">Services</a></li>
+        <li><a class="site-header__mobile-nav-link" href="html/contact.html#contact">Contact</a></li>
+      </ul>
+      <a class="site-header__mobile-cta" href="html/contact.html#contact">Request a Quote</a>
+    </nav>
+  </header>
+
   <main id="main-content"></main>
 </body>
 </html>
