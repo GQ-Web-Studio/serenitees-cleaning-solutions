@@ -477,9 +477,9 @@
   text-wrap: balance;
 }
 
-.cleaning-services {
+.cleaning-services,
+.why-choose {
   color: #0b090b;
-  scroll-margin-top: calc(var(--header-height) + 2rem);
   background-color: #f4f9f8;
   background-image: url("../media/texture/texture-8.webp");
   background-repeat: repeat;
@@ -488,10 +488,21 @@
   background-blend-mode: multiply;
 }
 
+.cleaning-services {
+  scroll-margin-top: calc(var(--header-height) + 2rem);
+}
+
 .cleaning-services,
 .cleaning-services *,
 .cleaning-services *::before,
 .cleaning-services *::after {
+  box-sizing: border-box;
+}
+
+.why-choose,
+.why-choose *,
+.why-choose *::before,
+.why-choose *::after {
   box-sizing: border-box;
 }
 
@@ -511,6 +522,72 @@
   line-height: 1.08;
   letter-spacing: -0.025em;
   text-align: center;
+  text-wrap: balance;
+}
+
+.why-choose__inner {
+  width: min(100%, calc(var(--header-max-width) + (var(--header-pad-x) * 2)));
+  padding: clamp(4rem, 7vw, 6.25rem) var(--header-pad-x) clamp(4.5rem, 8vw, 7rem);
+  margin: 0 auto;
+}
+
+.why-choose__title {
+  padding-bottom: 0.08em;
+  margin: 0;
+  color: #0b090b;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.75rem, 5vw, 4.75rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.why-choose__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.75rem, 3vw, 3rem);
+  margin-top: clamp(2.5rem, 5vw, 4.25rem);
+}
+
+.why-choose__reason {
+  min-width: 0;
+  text-align: center;
+}
+
+.why-choose__icon {
+  display: block;
+  width: clamp(2.75rem, 4vw, 3.5rem);
+  height: clamp(2.75rem, 4vw, 3.5rem);
+  margin: 0 auto;
+  color: #3d817f;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.why-choose__heading {
+  margin: 1.25rem 0 0;
+  color: #0b090b;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.why-choose__text {
+  max-width: 30rem;
+  margin: 0.8rem auto 0;
+  color: #454044;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.92rem, 1.2vw, 1rem);
+  font-weight: 500;
+  line-height: 1.65;
   text-wrap: balance;
 }
 
@@ -736,6 +813,40 @@
   transform: translateY(-0.12rem) scale(1.006);
 }
 
+.has-reveal-motion .why-choose [data-reveal-item] {
+  opacity: 0;
+  will-change: opacity, transform, filter;
+}
+
+.has-reveal-motion .why-choose__title[data-reveal-item] {
+  filter: blur(3px);
+  transform: translateY(0.75rem) scaleX(0.96);
+  transition:
+    opacity 620ms ease,
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 620ms ease;
+}
+
+.has-reveal-motion .why-choose__reason[data-reveal-item] {
+  filter: blur(3px);
+  transform: translateY(1rem) scale(0.98);
+  transition:
+    opacity 600ms ease var(--why-reveal-delay, 100ms),
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1) var(--why-reveal-delay, 100ms),
+    filter 600ms ease var(--why-reveal-delay, 100ms);
+}
+
+.has-reveal-motion .why-choose__reason:nth-child(1) { --why-reveal-delay: 100ms; }
+.has-reveal-motion .why-choose__reason:nth-child(2) { --why-reveal-delay: 180ms; }
+.has-reveal-motion .why-choose__reason:nth-child(3) { --why-reveal-delay: 260ms; }
+.has-reveal-motion .why-choose__reason:nth-child(4) { --why-reveal-delay: 340ms; }
+
+.has-reveal-motion .why-choose.is-revealed [data-reveal-item] {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
 @keyframes cleaning-tick-sweep {
   0%,
   100% {
@@ -920,6 +1031,11 @@
   .home-hero__title {
     font-size: clamp(3rem, 10vw, 4.75rem);
   }
+
+  .why-choose__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: clamp(2.75rem, 7vw, 4rem);
+  }
 }
 
 @media (max-width: 760px) {
@@ -1014,6 +1130,19 @@
     margin-top: 0.35rem;
     font-size: clamp(0.58rem, 2.7vw, 0.72rem);
     line-height: 1.1;
+  }
+
+  .why-choose__inner {
+    padding-top: 3.75rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .why-choose__grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+    width: min(100%, 28rem);
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
