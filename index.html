@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="media/static-images/residential/image-16.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260807-1">
+  <link rel="stylesheet" href="css/style.css?v=20260808-4">
 
   <meta property="og:site_name" content="Serenitees Cleaning Solutions">
   <meta property="og:locale" content="en_CA">
@@ -29,7 +29,8 @@
   <meta property="og:image" content="https://www.FINAL-DOMAIN.com/media/logo/logo.webp">
   <meta property="og:image:alt" content="Serenitees Cleaning Solutions logo">
 
-  <script src="js/script.js" defer></script>
+  <script type="module" src="js/vendor/model-viewer.min.js"></script>
+  <script src="js/script.js?v=20260808-1" defer></script>
 </head>
 <body class="home-page">
   <header class="site-header" data-site-header>
@@ -259,6 +260,10 @@
           <p class="process-strip__text">Enjoy a cleaner, fresher, and more comfortable space.</p>
         </article>
       </div>
+
+      <div class="process-strip__broom" aria-hidden="true" data-process-broom>
+        <model-viewer class="process-strip__broom-model" src="media/3d-objects/broom.glb" alt="" loading="eager" interaction-prompt="none" camera-target="0m 8m 0m" camera-orbit="25deg 75deg 30%" min-camera-orbit="auto auto 5%" max-camera-orbit="auto auto 200%" field-of-view="20deg" orientation="0deg 0deg 0deg" auto-rotate auto-rotate-delay="0" rotation-per-second="180deg" tone-mapping="commerce" exposure="1.1" data-process-broom-model></model-viewer>
+      </div>
     </section>
 
     <section class="spaces-clean" aria-labelledby="spaces-clean-title" data-reveal-group>
@@ -308,6 +313,35 @@
               </ul>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="areas-served" aria-labelledby="areas-served-title" data-areas-served data-reveal-group>
+      <div class="areas-served__sticky">
+        <div class="areas-served__inner">
+          <h2 class="areas-served__title" id="areas-served-title" data-reveal-item>Areas We Serve</h2>
+
+          <div class="areas-served__card" data-reveal-item>
+            <div class="areas-served__content">
+              <div class="areas-served__copy-stack">
+                <article class="areas-served__panel areas-served__panel--durham" data-area-panel="durham" aria-hidden="false">
+                  <h3 class="areas-served__heading">Durham Region</h3>
+                  <p class="areas-served__text">Professional residential and commercial cleaning services for homes, offices, and businesses throughout Durham Region.</p>
+                </article>
+
+                <article class="areas-served__panel areas-served__panel--toronto" data-area-panel="toronto" aria-hidden="true">
+                  <h3 class="areas-served__heading">Toronto</h3>
+                  <p class="areas-served__text">Dependable cleaning services for residential and commercial spaces across Toronto, available for both one-time and recurring needs.</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="areas-served__media">
+              <img class="areas-served__image areas-served__image--durham" src="media/static-images/area/durham-region.webp" alt="A view across Durham Region" width="1300" height="778" loading="lazy" decoding="async">
+              <img class="areas-served__image areas-served__image--toronto" src="media/static-images/area/toronto.webp" alt="The Toronto skyline" width="1440" height="960" loading="lazy" decoding="async">
+            </div>
+          </div>
         </div>
       </div>
     </section>

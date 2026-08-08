@@ -132,4 +132,107 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+
+  const processStrip = document.querySelector(".process-strip");
+  const processBroom = document.querySelector("[data-process-broom]");
+  const processBroomModel = document.querySelector("[data-process-broom-model]");
+  const reducedMotionMedia = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const mobileBroomMedia = window.matchMedia("(max-width: 760px)");
+
+  if (processStrip && processBroom && processBroomModel && !reducedMotionMedia.matches) {
+    let broomFrame = 0;
+
+    const updateProcessBroomFraming = () => {
+      processBroomModel.setAttribute(
+        "camera-orbit",
+        mobileBroomMedia.matches ? "25deg 75deg 75%" : "25deg 75deg 30%",
+      );
+      processBroomModel.jumpCameraToGoal?.();
+    };
+
+    const updateProcessBroom = () => {
+      broomFrame = 0;
+
+      const stripRect = processStrip.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const animationStart = viewportHeight * 0.94;
+      const animationDistance = (viewportHeight * 0.8) + stripRect.height;
+      const progress = Math.min(1, Math.max(0, (animationStart - stripRect.top) / animationDistance));
+      const dropDistance = stripRect.height;
+
+      processBroom.style.setProperty("--broom-drop", `${(progress * dropDistance).toFixed(2)}px`);
+    };
+
+    const queueProcessBroomUpdate = () => {
+      if (broomFrame) return;
+      broomFrame = window.requestAnimationFrame(updateProcessBroom);
+    };
+
+    const showLoadedBroom = () => {
+      processBroom.classList.add("is-loaded");
+      queueProcessBroomUpdate();
+    };
+
+    if (processBroomModel.loaded) {
+      showLoadedBroom();
+    } else {
+      processBroomModel.addEventListener("load", showLoadedBroom, { once: true });
+    }
+
+    window.addEventListener("scroll", queueProcessBroomUpdate, { passive: true });
+    window.addEventListener("resize", queueProcessBroomUpdate);
+    mobileBroomMedia.addEventListener?.("change", updateProcessBroomFraming);
+    updateProcessBroomFraming();
+    updateProcessBroom();
+  }
+
+  const areasServed = document.querySelector("[data-areas-served]");
+
+  if (areasServed) {
+    const durhamPanel = areasServed.querySelector('[data-area-panel="durham"]');
+    const torontoPanel = areasServed.querySelector('[data-area-panel="toronto"]');
+    let areasFrame = 0;
+
+    const clampProgress = (value) => Math.min(1, Math.max(0, value));
+
+    const updateAreasServed = () => {
+      areasFrame = 0;
+
+      const sectionRect = areasServed.getBoundingClientRect();
+      const scrollDistance = Math.max(1, sectionRect.height - window.innerHeight);
+      const progress = clampProgress(-sectionRect.top / scrollDistance);
+      let durhamOpacity;
+      let torontoOpacity;
+
+      if (reducedMotionMedia.matches) {
+        durhamOpacity = progress < 0.5 ? 1 : 0;
+        torontoOpacity = progress < 0.5 ? 0 : 1;
+      } else {
+        durhamOpacity = 1 - clampProgress((progress - 0.28) / 0.18);
+        torontoOpacity = clampProgress((progress - 0.54) / 0.18);
+      }
+
+      areasServed.style.setProperty("--area-durham-opacity", durhamOpacity.toFixed(3));
+      areasServed.style.setProperty("--area-toronto-opacity", torontoOpacity.toFixed(3));
+      areasServed.style.setProperty("--area-durham-shift", `${(-0.8 * (1 - durhamOpacity)).toFixed(3)}rem`);
+      areasServed.style.setProperty("--area-toronto-shift", `${(0.8 * (1 - torontoOpacity)).toFixed(3)}rem`);
+      areasServed.style.setProperty("--area-durham-scale", (1 + (0.025 * (1 - durhamOpacity))).toFixed(4));
+      areasServed.style.setProperty("--area-toronto-scale", (1.025 - (0.025 * torontoOpacity)).toFixed(4));
+
+      const activeArea = progress < 0.5 ? "durham" : "toronto";
+      areasServed.dataset.activeArea = activeArea;
+      durhamPanel?.setAttribute("aria-hidden", activeArea === "durham" ? "false" : "true");
+      torontoPanel?.setAttribute("aria-hidden", activeArea === "toronto" ? "false" : "true");
+    };
+
+    const queueAreasServedUpdate = () => {
+      if (areasFrame) return;
+      areasFrame = window.requestAnimationFrame(updateAreasServed);
+    };
+
+    window.addEventListener("scroll", queueAreasServedUpdate, { passive: true });
+    window.addEventListener("resize", queueAreasServedUpdate);
+    reducedMotionMedia.addEventListener?.("change", queueAreasServedUpdate);
+    updateAreasServed();
+  }
 });
