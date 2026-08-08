@@ -68,8 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const revealGroups = document.querySelectorAll("[data-reveal-group]");
   const individualRevealItems = document.querySelectorAll("[data-reveal-individually] [data-reveal-item]");
-  const individualRevealTitles = document.querySelectorAll("[data-reveal-individually] .cleaning-services__title[data-reveal-item]");
-  const individualRevealCards = document.querySelectorAll("[data-reveal-individually] .cleaning-service-card[data-reveal-item]");
+  const individualRevealTitles = document.querySelectorAll(
+    "[data-reveal-individually] .cleaning-services__title[data-reveal-item], " +
+    "[data-reveal-individually] .areas-served__title[data-reveal-item]"
+  );
+  const individualRevealCards = document.querySelectorAll(
+    "[data-reveal-individually] .cleaning-service-card[data-reveal-item], " +
+    "[data-reveal-individually] .areas-served__card[data-reveal-item]"
+  );
 
   if (revealGroups.length || individualRevealItems.length) {
     if (!("IntersectionObserver" in window)) {
@@ -107,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       revealGroups.forEach((group) => revealObserver.observe(group));
       individualRevealTitles.forEach((title) => individualTitleObserver.observe(title));
       individualRevealCards.forEach((card) => {
-        const cardImage = card.querySelector(".cleaning-service-card__image");
+        const cardImage = card.querySelector(".cleaning-service-card__image, .areas-served__image");
         const observeCard = () => individualCardObserver.observe(card);
 
         if (!cardImage || cardImage.complete) {
@@ -126,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         individualRevealCards.forEach((card) => {
           if (card.classList.contains("is-revealed")) return;
 
-          const cardImage = card.querySelector(".cleaning-service-card__image");
+          const cardImage = card.querySelector(".cleaning-service-card__image, .areas-served__image");
           if (!cardImage || cardImage.complete) individualCardObserver.observe(card);
         });
       });
@@ -186,53 +192,4 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProcessBroom();
   }
 
-  const areasServed = document.querySelector("[data-areas-served]");
-
-  if (areasServed) {
-    const durhamPanel = areasServed.querySelector('[data-area-panel="durham"]');
-    const torontoPanel = areasServed.querySelector('[data-area-panel="toronto"]');
-    let areasFrame = 0;
-
-    const clampProgress = (value) => Math.min(1, Math.max(0, value));
-
-    const updateAreasServed = () => {
-      areasFrame = 0;
-
-      const sectionRect = areasServed.getBoundingClientRect();
-      const scrollDistance = Math.max(1, sectionRect.height - window.innerHeight);
-      const progress = clampProgress(-sectionRect.top / scrollDistance);
-      let durhamOpacity;
-      let torontoOpacity;
-
-      if (reducedMotionMedia.matches) {
-        durhamOpacity = progress < 0.5 ? 1 : 0;
-        torontoOpacity = progress < 0.5 ? 0 : 1;
-      } else {
-        durhamOpacity = 1 - clampProgress((progress - 0.28) / 0.18);
-        torontoOpacity = clampProgress((progress - 0.54) / 0.18);
-      }
-
-      areasServed.style.setProperty("--area-durham-opacity", durhamOpacity.toFixed(3));
-      areasServed.style.setProperty("--area-toronto-opacity", torontoOpacity.toFixed(3));
-      areasServed.style.setProperty("--area-durham-shift", `${(-0.8 * (1 - durhamOpacity)).toFixed(3)}rem`);
-      areasServed.style.setProperty("--area-toronto-shift", `${(0.8 * (1 - torontoOpacity)).toFixed(3)}rem`);
-      areasServed.style.setProperty("--area-durham-scale", (1 + (0.025 * (1 - durhamOpacity))).toFixed(4));
-      areasServed.style.setProperty("--area-toronto-scale", (1.025 - (0.025 * torontoOpacity)).toFixed(4));
-
-      const activeArea = progress < 0.5 ? "durham" : "toronto";
-      areasServed.dataset.activeArea = activeArea;
-      durhamPanel?.setAttribute("aria-hidden", activeArea === "durham" ? "false" : "true");
-      torontoPanel?.setAttribute("aria-hidden", activeArea === "toronto" ? "false" : "true");
-    };
-
-    const queueAreasServedUpdate = () => {
-      if (areasFrame) return;
-      areasFrame = window.requestAnimationFrame(updateAreasServed);
-    };
-
-    window.addEventListener("scroll", queueAreasServedUpdate, { passive: true });
-    window.addEventListener("resize", queueAreasServedUpdate);
-    reducedMotionMedia.addEventListener?.("change", queueAreasServedUpdate);
-    updateAreasServed();
-  }
 });

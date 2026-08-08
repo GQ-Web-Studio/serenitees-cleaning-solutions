@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="media/static-images/residential/image-16.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260808-6">
+  <link rel="stylesheet" href="css/style.css?v=20260808-15">
 
   <meta property="og:site_name" content="Serenitees Cleaning Solutions">
   <meta property="og:locale" content="en_CA">
@@ -30,13 +30,14 @@
   <meta property="og:image:alt" content="Serenitees Cleaning Solutions logo">
 
   <script type="module" src="js/vendor/model-viewer.min.js"></script>
-  <script src="js/script.js?v=20260808-1" defer></script>
+  <script src="js/script.js?v=20260808-3" defer></script>
 </head>
 <body class="home-page">
   <header class="site-header" data-site-header>
     <div class="site-header__inner">
       <a class="site-header__logo-link" href="index.html" aria-label="Serenitees Cleaning Solutions home">
-        <img class="site-header__logo" src="media/logo/favicon.webp" alt="Serenitees Cleaning Solutions" width="60" height="60">
+        <img class="site-header__logo site-header__logo--desktop" src="media/logo/logo.webp" alt="" width="1660" height="1620">
+        <img class="site-header__logo site-header__logo--mobile" src="media/logo/favicon.webp" alt="" width="2400" height="2400">
       </a>
 
       <nav class="site-header__nav" aria-label="Primary navigation">
@@ -317,31 +318,32 @@
       </div>
     </section>
 
-    <section class="areas-served" aria-labelledby="areas-served-title" data-areas-served data-reveal-group>
-      <div class="areas-served__sticky">
-        <div class="areas-served__inner">
-          <h2 class="areas-served__title" id="areas-served-title" data-reveal-item>Areas We Serve</h2>
+    <section class="areas-served" aria-labelledby="areas-served-title" data-reveal-individually>
+      <div class="areas-served__inner">
+        <h2 class="areas-served__title" id="areas-served-title" data-reveal-item>Areas We Serve</h2>
 
-          <div class="areas-served__card" data-reveal-item>
+        <div class="areas-served__list">
+          <article class="areas-served__card" data-reveal-item>
             <div class="areas-served__content">
-              <div class="areas-served__copy-stack">
-                <article class="areas-served__panel areas-served__panel--durham" data-area-panel="durham" aria-hidden="false">
-                  <h3 class="areas-served__heading">Durham Region</h3>
-                  <p class="areas-served__text">Professional residential and commercial cleaning services for homes, offices, and businesses throughout Durham Region.</p>
-                </article>
-
-                <article class="areas-served__panel areas-served__panel--toronto" data-area-panel="toronto" aria-hidden="true">
-                  <h3 class="areas-served__heading">Toronto</h3>
-                  <p class="areas-served__text">Dependable cleaning services for residential and commercial spaces across Toronto, available for both one-time and recurring needs.</p>
-                </article>
-              </div>
+              <h3 class="areas-served__heading">Durham Region</h3>
+              <p class="areas-served__text">Professional residential and commercial cleaning services for homes, offices, and businesses throughout Durham Region.</p>
             </div>
 
             <div class="areas-served__media">
-              <img class="areas-served__image areas-served__image--durham" src="media/static-images/area/durham-region.webp" alt="A view across Durham Region" width="1300" height="778" loading="lazy" decoding="async">
-              <img class="areas-served__image areas-served__image--toronto" src="media/static-images/area/toronto.webp" alt="The Toronto skyline" width="1440" height="960" loading="lazy" decoding="async">
+              <img class="areas-served__image" src="media/static-images/area/durham-region.webp" alt="A view across Durham Region" width="1300" height="778" loading="lazy" decoding="async">
             </div>
-          </div>
+          </article>
+
+          <article class="areas-served__card" data-reveal-item>
+            <div class="areas-served__content">
+              <h3 class="areas-served__heading">Toronto</h3>
+              <p class="areas-served__text">Dependable cleaning services for residential and commercial spaces across Toronto, available for both one-time and recurring needs.</p>
+            </div>
+
+            <div class="areas-served__media">
+              <img class="areas-served__image" src="media/static-images/area/toronto.webp" alt="The Toronto skyline" width="1440" height="960" loading="lazy" decoding="async">
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -364,5 +366,58 @@
       </div>
     </section>
   </main>
+
+  <footer class="site-footer" data-reveal-group>
+    <div class="site-footer__inner">
+      <div class="site-footer__main">
+        <section class="site-footer__panel site-footer__brand" aria-labelledby="footer-brand-title">
+          <h2 class="site-footer__business-name" id="footer-brand-title">Serenitees Cleaning Solutions</h2>
+          <p class="site-footer__summary">Dependable cleaning for homes and businesses, designed to bring more comfort, consistency, and peace of mind</p>
+          <a class="home-hero__cta home-hero__cta--primary site-footer__cta" href="html/contact.html#contact">Request a Quote</a>
+        </section>
+
+        <nav class="site-footer__panel" aria-labelledby="footer-quick-links-title">
+          <h2 class="site-footer__heading" id="footer-quick-links-title">Quick Links</h2>
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="index.html">Home</a></li>
+            <li><a class="site-footer__link" href="html/about.html">About</a></li>
+            <li><a class="site-footer__link" href="index.html#services">Services</a></li>
+            <li><a class="site-footer__link" href="html/contact.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__panel" aria-labelledby="footer-services-title">
+          <h2 class="site-footer__heading" id="footer-services-title">Services</h2>
+          <ul class="site-footer__list">
+            <li><a class="site-footer__link" href="html/residential-cleaning.html">Residential Cleaning</a></li>
+            <li><a class="site-footer__link" href="html/commercial-cleaning.html">Commercial Cleaning</a></li>
+          </ul>
+        </nav>
+
+        <section class="site-footer__panel" aria-labelledby="footer-contact-title">
+          <h2 class="site-footer__heading" id="footer-contact-title">Contact</h2>
+          <ul class="site-footer__contact-list">
+            <li>
+              <a class="site-footer__contact-link" href="mailto:sereniteescleaning@gmail.com">
+                <svg class="site-footer__contact-icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="6" width="26" height="20" rx="2.5" /><path d="m5 8 11 9 11-9" /></svg>
+                <span class="site-footer__contact-copy"><span class="site-footer__contact-label">Email</span><span>sereniteescleaning@gmail.com</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="site-footer__contact-link" href="tel:+14168229350">
+                <svg class="site-footer__contact-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M10.2 4.2 14 10l-3.1 3a22.3 22.3 0 0 0 8.1 8.1l3-3.1 5.8 3.8-1.5 5.1c-.4 1.3-1.7 2.1-3 1.8C12.8 26.2 5.8 19.2 3.3 8.7c-.3-1.3.5-2.6 1.8-3Z" /></svg>
+                <span class="site-footer__contact-copy"><span class="site-footer__contact-label">Phone</span><span>+1 (416) 822-9350</span></span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 Serenitees Cleaning Solutions. All Rights Reserved.</p>
+        <p>Built by <a class="site-footer__credit-link" href="https://gqwebstudio.com/" target="_blank" rel="noopener">GQ Web Studio</a></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
