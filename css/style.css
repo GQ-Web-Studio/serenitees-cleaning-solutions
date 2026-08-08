@@ -653,6 +653,12 @@
   line-height: 1.75;
 }
 
+.home-cta__actions {
+  display: flex;
+  align-items: center;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+}
+
 .home-about__media {
   display: flex;
   align-items: center;
@@ -1248,6 +1254,15 @@
     filter 650ms ease 140ms;
 }
 
+.has-reveal-motion .home-cta__actions[data-reveal-item] {
+  filter: blur(4px);
+  transform: translateY(0.75rem) scale(0.985);
+  transition:
+    opacity 620ms ease 280ms,
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1) 280ms,
+    filter 620ms ease 280ms;
+}
+
 .has-reveal-motion .home-about__media[data-reveal-item] {
   clip-path: inset(0 0 0 10% round 1.5rem);
   filter: blur(4px);
@@ -1557,6 +1572,10 @@
     width: min(100%, 44rem);
     margin: 0 auto;
     text-align: center;
+  }
+
+  .home-cta__actions {
+    justify-content: center;
   }
 
   .home-about__media {
