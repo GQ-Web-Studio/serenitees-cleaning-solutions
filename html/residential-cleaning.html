@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="../media/static-images/residential/image-7.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=20260809-3">
+  <link rel="stylesheet" href="../css/style.css?v=20260809-10">
 
   <meta property="og:site_name" content="Serenitees Cleaning Solutions">
   <meta property="og:locale" content="en_CA">
@@ -29,7 +29,8 @@
   <meta property="og:image" content="https://www.FINAL-DOMAIN.com/media/logo/logo.webp">
   <meta property="og:image:alt" content="Serenitees Cleaning Solutions logo">
 
-  <script src="../js/script.js" defer></script>
+  <script type="module" src="../js/vendor/model-viewer.min.js"></script>
+  <script src="../js/script.js?v=20260809-6" defer></script>
 </head>
 <body class="home-page">
   <header class="site-header" data-site-header>
@@ -121,6 +122,321 @@
           </svg>
           <p class="trust-strip__heading">Tailored to Your Home</p>
         </article>
+      </div>
+    </section>
+
+    <section class="home-about" id="overview" aria-labelledby="residential-overview-title" data-reveal-group>
+      <div class="home-about__inner">
+        <div class="home-about__content">
+          <div class="home-about__copy">
+            <h2 class="home-about__title" id="residential-overview-title" data-reveal-item>Overview</h2>
+            <p class="home-about__text" data-reveal-item>Serenitees Cleaning Solutions provides dependable one-time and recurring cleaning for houses, apartments, and condominiums across Durham Region and Toronto. Each service is tailored to your space, its condition, and your cleaning needs, helping you maintain a fresh, comfortable, and well-kept home.</p>
+          </div>
+        </div>
+
+        <div class="home-about__media" data-reveal-item>
+          <img class="home-about__image" src="../media/static-images/residential/image-11.webp" alt="A fresh and comfortable professionally cleaned home" width="2400" height="1600" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="spaces-clean residential-included" id="whats-included" aria-labelledby="whats-included-title" data-reveal-group>
+      <div class="spaces-clean__inner">
+        <h2 class="spaces-clean__title" id="whats-included-title" data-reveal-item>What&rsquo;s Included</h2>
+        <p class="residential-included__intro" data-reveal-item>From everyday upkeep to deeper cleaning, services can be tailored to the areas of your home that need attention most</p>
+
+        <div class="spaces-clean__grid residential-included__grid">
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M6 14h20v8a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5Z" />
+                <path d="M3 14h26M10 10h12M13 10a3 3 0 0 1 6 0M12 4c-1 1-1 2 0 3M18 3c-1 1-1 2 0 3" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Kitchen Cleaning</h3>
+              <ul class="cleaning-service-card__highlights">
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Counters &amp; surfaces</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Sinks</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Appliance surfaces</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Floors</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>General tidying</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M4 17h24v4a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6ZM7 27v2M25 27v2" />
+                <path d="M8 17V8a4 4 0 0 1 8 0v1M13 9h6M19 9v3M16 12v2" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Bathroom Cleaning</h3>
+              <ul class="cleaning-service-card__highlights">
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Sinks &amp; counters</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Toilets</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Showers &amp; tubs</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Mirrors</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Floors</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M4 27V9M28 27V16a4 4 0 0 0-4-4H4M4 19h24M8 12V8h7a4 4 0 0 1 4 4" />
+                <path d="M4 24h24M7 27v2M25 27v2" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Living Areas &amp; Bedrooms</h3>
+              <ul class="cleaning-service-card__highlights">
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Dusting surfaces &amp; furniture</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Vacuuming carpets &amp; rugs</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Sweeping &amp; mopping</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>General surface cleaning</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Shared living spaces</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="m8 3 1.2 3.3L12.5 8 9.2 9.7 8 13l-1.2-3.3L3.5 8l3.3-1.7L8 3Z" />
+                <path d="m24 17 1.1 2.9L28 21.5l-2.9 1.6L24 26l-1.1-2.9-2.9-1.6 2.9-1.6L24 17Z" />
+                <path d="M15 7v19M12 12h6M15 19h5M23 5v10M20 9h6" />
+              </svg>
+              <h3 class="spaces-clean-card__title">General Home Upkeep</h3>
+              <ul class="cleaning-service-card__highlights">
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Tables &amp; counters</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Common areas</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>High-use spaces</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Routine maintenance cleaning</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>General vacuuming &amp; floor care</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spaces-clean residential-places" aria-labelledby="residential-places-title" data-reveal-group>
+      <div class="spaces-clean__inner">
+        <h2 class="spaces-clean__title" id="residential-places-title" data-reveal-item>Places We Clean</h2>
+        <p class="residential-places__intro" data-reveal-item>Residential cleaning tailored to the type of property you call home and the spaces that matter most to you.</p>
+
+        <div class="spaces-clean__grid residential-places__grid">
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="m3 14 13-10 13 10" />
+                <path d="M6 12.5V28h20V12.5M12.5 28v-8h7v8" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Houses</h3>
+              <p class="residential-places__text">Reliable cleaning tailored to your household, its rooms, and your everyday routine.</p>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M5 28V8h15v20M20 14h7v14M2.5 28h27" />
+                <path d="M9 12h3M15 12h2M9 17h3M15 17h2M9 22h3M15 22h2M23 18h1M23 22h1" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Apartments</h3>
+              <p class="residential-places__text">Thoughtful cleaning for apartments of all sizes, from routine upkeep to deeper care.</p>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M7 28V4h18v24M3 28h26" />
+                <path d="M11 8h3M18 8h3M11 13h3M18 13h3M11 18h3M18 18h3M13 28v-5h6v5" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Condominiums</h3>
+              <p class="residential-places__text">Detailed cleaning for condo interiors and the living spaces you use most.</p>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="m3 14 13-10 13 10" />
+                <path d="M6 12.5V28h20V12.5M21 8V5h4v6M10 18h5v5h-5M20 18h2M20 22h2" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Other Residential Properties</h3>
+              <p class="residential-places__text">Flexible cleaning for townhomes, rental properties, and other residential spaces.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-strip" aria-label="How the Serenitees residential cleaning process works" data-reveal-group>
+      <div class="process-strip__inner">
+        <article class="process-strip__step" data-reveal-item>
+          <span class="process-strip__number" aria-hidden="true">1</span>
+          <h2 class="process-strip__heading">Request a Quote</h2>
+          <p class="process-strip__text">Tell us about your home and cleaning needs.</p>
+        </article>
+
+        <article class="process-strip__step" data-reveal-item>
+          <span class="process-strip__number" aria-hidden="true">2</span>
+          <h2 class="process-strip__heading">Confirm Your Service</h2>
+          <p class="process-strip__text">We&rsquo;ll confirm the cleaning details, schedule, and requirements.</p>
+        </article>
+
+        <article class="process-strip__step" data-reveal-item>
+          <span class="process-strip__number" aria-hidden="true">3</span>
+          <h2 class="process-strip__heading">We Clean Your Home</h2>
+          <p class="process-strip__text">Serenitees completes the cleaning based on the agreed service.</p>
+        </article>
+
+        <article class="process-strip__step" data-reveal-item>
+          <span class="process-strip__number" aria-hidden="true">4</span>
+          <h2 class="process-strip__heading">Enjoy a Fresher Home</h2>
+          <p class="process-strip__text">Enjoy a cleaner, fresher, and more comfortable home.</p>
+        </article>
+      </div>
+
+      <div class="process-strip__broom" aria-hidden="true" data-process-broom>
+        <model-viewer class="process-strip__broom-model" src="../media/3d-objects/broom.glb" alt="" loading="eager" interaction-prompt="none" camera-target="0m 8m 0m" camera-orbit="25deg 75deg 30%" min-camera-orbit="auto auto 5%" max-camera-orbit="auto auto 200%" field-of-view="20deg" orientation="0deg 0deg 0deg" auto-rotate auto-rotate-delay="0" rotation-per-second="180deg" tone-mapping="commerce" exposure="1.1" data-process-broom-model></model-viewer>
+      </div>
+    </section>
+
+    <section class="areas-served" aria-labelledby="residential-areas-title" data-reveal-individually>
+      <div class="areas-served__inner">
+        <h2 class="areas-served__title" id="residential-areas-title" data-reveal-item>Areas We Serve</h2>
+        <p class="areas-served__intro" data-reveal-item>Residential cleaning services available throughout Durham Region and Toronto.</p>
+
+        <div class="areas-served__list">
+          <article class="areas-served__card" data-reveal-item>
+            <div class="areas-served__content">
+              <h3 class="areas-served__heading">Durham Region</h3>
+              <p class="areas-served__text">Dependable residential cleaning for houses, apartments, and condominiums throughout Durham Region.</p>
+            </div>
+
+            <div class="areas-served__media">
+              <img class="areas-served__image" src="../media/static-images/area/durham-region.webp" alt="A view across Durham Region" width="1300" height="778" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="areas-served__card" data-reveal-item>
+            <div class="areas-served__content">
+              <h3 class="areas-served__heading">Toronto</h3>
+              <p class="areas-served__text">Professional residential cleaning across Toronto, available for both one-time and recurring needs.</p>
+            </div>
+
+            <div class="areas-served__media">
+              <img class="areas-served__image" src="../media/static-images/area/toronto.webp" alt="The Toronto skyline" width="1440" height="960" loading="lazy" decoding="async">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="residential-faq" aria-labelledby="residential-faq-title" data-faq-section data-reveal-individually>
+      <div class="residential-faq__inner">
+        <h2 class="residential-faq__title" id="residential-faq-title" data-reveal-item>Frequently Asked Questions</h2>
+
+        <div class="residential-faq__list">
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="residential-faq-question-1" aria-expanded="false" aria-controls="residential-faq-answer-1" data-faq-toggle>
+              <span>What types of residential properties do you clean?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="residential-faq-answer-1" role="region" aria-labelledby="residential-faq-question-1" aria-hidden="true" data-faq-answer>
+              <p>We provide residential cleaning for houses, apartments, condominiums, and other residential properties throughout Durham Region and Toronto.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="residential-faq-question-2" aria-expanded="false" aria-controls="residential-faq-answer-2" data-faq-toggle>
+              <span>Do you offer one-time and recurring cleaning?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="residential-faq-answer-2" role="region" aria-labelledby="residential-faq-question-2" aria-hidden="true" data-faq-answer>
+              <p>Yes. Serenitees Cleaning Solutions offers both one-time cleaning and recurring cleaning based on your needs and availability.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="residential-faq-question-3" aria-expanded="false" aria-controls="residential-faq-answer-3" data-faq-toggle>
+              <span>What can be included in a residential cleaning?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="residential-faq-answer-3" role="region" aria-labelledby="residential-faq-question-3" aria-hidden="true" data-faq-answer>
+              <p>Cleaning can include kitchens, bathrooms, bedrooms, living areas, dusting, vacuuming, sweeping, mopping, surface cleaning, and general home upkeep. The service can be tailored to your home and cleaning needs.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="residential-faq-question-4" aria-expanded="false" aria-controls="residential-faq-answer-4" data-faq-toggle>
+              <span>Do you offer deep cleaning?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="residential-faq-answer-4" role="region" aria-labelledby="residential-faq-question-4" aria-hidden="true" data-faq-answer>
+              <p>Yes. Deep cleaning can be requested for homes that need more detailed attention, including one-time or catch-up cleaning.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="residential-faq-question-5" aria-expanded="false" aria-controls="residential-faq-answer-5" data-faq-toggle>
+              <span>How often can I schedule recurring cleaning?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="residential-faq-answer-5" role="region" aria-labelledby="residential-faq-question-5" aria-hidden="true" data-faq-answer>
+              <p>Recurring cleaning can be arranged weekly, biweekly, monthly, or on another schedule depending on your needs and Serenitees Cleaning Solutions&rsquo; availability.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="residential-faq-question-6" aria-expanded="false" aria-controls="residential-faq-answer-6" data-faq-toggle>
+              <span>How do I request a quote?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="residential-faq-answer-6" role="region" aria-labelledby="residential-faq-question-6" aria-hidden="true" data-faq-answer>
+              <p>Complete the Request a Quote form with a few details about your home and cleaning needs. Serenitees Cleaning Solutions will contact you to discuss the service, availability, and your quote.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="residential-faq-question-7" aria-expanded="false" aria-controls="residential-faq-answer-7" data-faq-toggle>
+              <span>What areas do you serve?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="residential-faq-answer-7" role="region" aria-labelledby="residential-faq-question-7" aria-hidden="true" data-faq-answer>
+              <p>Residential cleaning services are available throughout Durham Region and Toronto.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="residential-faq-question-8" aria-expanded="false" aria-controls="residential-faq-answer-8" data-faq-toggle>
+              <span>Can the cleaning be tailored to what my home needs?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="residential-faq-answer-8" role="region" aria-labelledby="residential-faq-question-8" aria-hidden="true" data-faq-answer>
+              <p>Yes. Cleaning services can be adjusted based on your space, its condition, and the areas you would like cleaned.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-about home-cta" aria-labelledby="residential-cta-title" data-reveal-group>
+      <div class="home-about__inner">
+        <div class="home-about__media" data-reveal-item>
+          <img class="home-about__image" src="../media/static-images/residential/image-14.webp" alt="A bright, clean, and calming residential living space" width="2000" height="1333" loading="lazy" decoding="async">
+        </div>
+
+        <div class="home-about__content">
+          <div class="home-about__copy">
+            <h2 class="home-about__title" id="residential-cta-title" data-reveal-item>Ready for a Cleaner, Calmer Home?</h2>
+            <p class="home-about__text" data-reveal-item>Tell us about your cleaning needs and we&rsquo;ll help you find the right service for your home.</p>
+            <div class="home-cta__actions" data-reveal-item>
+              <a class="home-hero__cta home-hero__cta--primary" href="request-a-quote.html">Request a Quote</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>

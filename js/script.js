@@ -70,11 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const individualRevealItems = document.querySelectorAll("[data-reveal-individually] [data-reveal-item]");
   const individualRevealTitles = document.querySelectorAll(
     "[data-reveal-individually] .cleaning-services__title[data-reveal-item], " +
-    "[data-reveal-individually] .areas-served__title[data-reveal-item]"
+    "[data-reveal-individually] .areas-served__title[data-reveal-item], " +
+    "[data-reveal-individually] .areas-served__intro[data-reveal-item], " +
+    "[data-reveal-individually] .residential-faq__title[data-reveal-item]"
   );
   const individualRevealCards = document.querySelectorAll(
     "[data-reveal-individually] .cleaning-service-card[data-reveal-item], " +
-    "[data-reveal-individually] .areas-served__card[data-reveal-item]"
+    "[data-reveal-individually] .areas-served__card[data-reveal-item], " +
+    "[data-reveal-individually] .residential-faq-item[data-reveal-item]"
   );
 
   if (revealGroups.length || individualRevealItems.length) {
@@ -191,5 +194,55 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProcessBroomFraming();
     updateProcessBroom();
   }
+
+  document.querySelectorAll("[data-faq-section]").forEach((faqSection) => {
+    faqSection.querySelectorAll("[data-faq-toggle]").forEach((toggle) => {
+      const answerId = toggle.getAttribute("aria-controls");
+      const answer = answerId ? document.getElementById(answerId) : null;
+      const item = toggle.closest(".residential-faq-item");
+
+      if (!answer || !item) return;
+      let heightFrame = 0;
+
+      const finishAnswerTransition = () => {
+        if (toggle.getAttribute("aria-expanded") === "true") {
+          answer.style.height = "auto";
+        }
+      };
+
+      answer.addEventListener("transitionend", (event) => {
+        if (event.propertyName === "height") finishAnswerTransition();
+      });
+
+      toggle.addEventListener("click", () => {
+        const shouldOpen = toggle.getAttribute("aria-expanded") !== "true";
+
+        if (heightFrame) {
+          window.cancelAnimationFrame(heightFrame);
+          heightFrame = 0;
+        }
+
+        toggle.setAttribute("aria-expanded", String(shouldOpen));
+        answer.setAttribute("aria-hidden", String(!shouldOpen));
+        item.classList.toggle("is-open", shouldOpen);
+
+        if (reducedMotionMedia.matches) {
+          answer.style.height = shouldOpen ? "auto" : "0px";
+          return;
+        }
+
+        if (shouldOpen) {
+          answer.style.height = `${answer.scrollHeight}px`;
+          return;
+        }
+
+        answer.style.height = `${answer.scrollHeight}px`;
+        heightFrame = window.requestAnimationFrame(() => {
+          heightFrame = 0;
+          answer.style.height = "0px";
+        });
+      });
+    });
+  });
 
 });

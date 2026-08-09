@@ -16,8 +16,9 @@
   <link rel="icon" href="../media/logo/favicon.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="../media/static-images/commercial/image-10.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=20260809-3">
+  <link rel="stylesheet" href="../css/style.css?v=20260809-11">
 
   <meta property="og:site_name" content="Serenitees Cleaning Solutions">
   <meta property="og:locale" content="en_CA">
@@ -28,9 +29,10 @@
   <meta property="og:image" content="https://www.FINAL-DOMAIN.com/media/logo/logo.webp">
   <meta property="og:image:alt" content="Serenitees Cleaning Solutions logo">
 
-  <script src="../js/script.js" defer></script>
+  <script type="module" src="../js/vendor/model-viewer.min.js"></script>
+  <script src="../js/script.js?v=20260809-6" defer></script>
 </head>
-<body>
+<body class="home-page">
   <header class="site-header" data-site-header>
     <div class="site-header__inner">
       <a class="site-header__logo-link" href="../index.html" aria-label="Serenitees Cleaning Solutions home">
@@ -69,7 +71,371 @@
     </nav>
   </header>
 
-  <main id="main-content"></main>
+  <main id="main-content" class="home-main">
+    <section class="home-hero commercial-hero" aria-labelledby="commercial-hero-title" data-reveal-group>
+      <div class="home-hero__inner">
+        <div class="home-hero__content">
+          <h1 class="home-hero__title" id="commercial-hero-title" data-reveal-item>A Cleaner Workspace, A Stronger Impression</h1>
+          <p class="home-hero__text" data-reveal-item>Dependable one-time and recurring commercial cleaning across Durham Region and Toronto</p>
+          <div class="home-hero__actions" aria-label="Commercial cleaning actions" data-reveal-item>
+            <a class="home-hero__cta home-hero__cta--primary" href="request-a-quote.html">Request a Quote</a>
+            <a class="home-hero__cta home-hero__cta--secondary" href="#whats-included">See What&rsquo;s Included</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Commercial cleaning trust points" data-reveal-group>
+      <div class="trust-strip__inner">
+        <article class="trust-strip__item" data-reveal-item>
+          <svg class="trust-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M5 28V8h15v20M20 14h7v14M2.5 28h27" />
+            <path d="M9 12h3M15 12h2M9 17h3M15 17h2M9 22h3M15 22h2M23 18h1M23 22h1" />
+          </svg>
+          <p class="trust-strip__text">Offices &amp; Commercial Spaces</p>
+        </article>
+
+        <article class="trust-strip__item" data-reveal-item>
+          <svg class="trust-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M6 5h20a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3Z" />
+            <path d="M9 2v6M23 2v6M3 11h26M11 18a6 6 0 0 1 9.8-4.6M21 14v4h-4M21 22a6 6 0 0 1-9.8 4.6M11 26v-4h4" />
+          </svg>
+          <p class="trust-strip__text">One-Time or Recurring</p>
+        </article>
+
+        <article class="trust-strip__item" data-reveal-item>
+          <svg class="trust-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M27 13c0 8-11 16-11 16S5 21 5 13a11 11 0 1 1 22 0Z" />
+            <circle cx="16" cy="13" r="3.5" />
+          </svg>
+          <p class="trust-strip__text">Durham &amp; Toronto</p>
+        </article>
+
+        <article class="trust-strip__item" data-reveal-item>
+          <svg class="trust-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m8 3 1.2 3.3L12.5 8 9.2 9.7 8 13l-1.2-3.3L3.5 8l3.3-1.7L8 3Z" />
+            <path d="m22 10 1.8 4.7 4.7 1.8-4.7 1.8L22 23l-1.8-4.7-4.7-1.8 4.7-1.8L22 10Z" />
+            <path d="m10 21 1.1 2.9 2.9 1.1-2.9 1.1L10 29l-1.1-2.9L6 25l2.9-1.1L10 21Z" />
+          </svg>
+          <p class="trust-strip__text">Tailored to Your Property</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-about" id="overview" aria-labelledby="commercial-overview-title" data-reveal-group>
+      <div class="home-about__inner">
+        <div class="home-about__content">
+          <div class="home-about__copy">
+            <h2 class="home-about__title" id="commercial-overview-title" data-reveal-item>Overview</h2>
+            <p class="home-about__text" data-reveal-item>Serenitees Cleaning Solutions provides dependable one-time and recurring cleaning for offices, storefronts, restaurants, medical and dental offices, schools, daycares, and other commercial properties across Durham Region and Toronto. Each service is tailored to your property&rsquo;s size, condition, schedule, and cleaning requirements, helping you maintain a clean, professional, and welcoming environment.</p>
+          </div>
+        </div>
+
+        <div class="home-about__media" data-reveal-item>
+          <img class="home-about__image" src="../media/static-images/commercial/image-8.webp" alt="A professionally cleaned and well-maintained commercial workspace" width="2000" height="1333" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="spaces-clean residential-included commercial-included" id="whats-included" aria-labelledby="commercial-included-title" data-reveal-group>
+      <div class="spaces-clean__inner">
+        <h2 class="spaces-clean__title" id="commercial-included-title" data-reveal-item>What&rsquo;s Included</h2>
+        <p class="residential-included__intro" data-reveal-item>From routine upkeep to more detailed cleaning, services can be tailored to the workspaces and high-use areas that need attention most.</p>
+
+        <div class="spaces-clean__grid residential-included__grid">
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M4 11h24v16H4ZM11 11V7h10v4M4 17h24" />
+                <path d="M14 16h4v3h-4Z" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Workspaces &amp; Surfaces</h3>
+              <ul class="cleaning-service-card__highlights">
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Desks &amp; workspaces</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Tables &amp; counters</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Accessible surfaces</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Frequently used areas</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>General dusting</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="m4 11 12-7 12 7-12 7Z" />
+                <path d="m4 17 12 7 12-7M4 23l12 7 12-7" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Floor Cleaning</h3>
+              <ul class="cleaning-service-card__highlights">
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Vacuuming carpets</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Vacuuming floors</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Sweeping</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Mopping</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>General floor maintenance</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M4 17h24v4a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6ZM7 27v2M25 27v2" />
+                <path d="M8 17V8a4 4 0 0 1 8 0v1M13 9h6M19 9v3M16 12v2" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Washrooms &amp; Common Areas</h3>
+              <ul class="cleaning-service-card__highlights">
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Washrooms</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Commercial common areas</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Kitchens</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Shared spaces</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>High-use areas</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M6 5h20a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3Z" />
+                <path d="M9 2v6M23 2v6M3 11h26M10 17h4v4h-4M18 17h4M18 22h4" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Routine Maintenance</h3>
+              <ul class="cleaning-service-card__highlights">
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Regular scheduled cleaning</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>General upkeep</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Repeated high-use area cleaning</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>One-time cleaning</span></li>
+                <li><span class="cleaning-service-card__tick" aria-hidden="true">&#10003;</span><span>Commercial maintenance cleaning</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spaces-clean residential-places commercial-places" aria-labelledby="commercial-places-title" data-reveal-group>
+      <div class="spaces-clean__inner">
+        <h2 class="spaces-clean__title" id="commercial-places-title" data-reveal-item>Places We Clean</h2>
+        <p class="residential-places__intro" data-reveal-item>Commercial cleaning tailored to your property type, daily operations, and the spaces used by your team and customers.</p>
+
+        <div class="spaces-clean__grid residential-places__grid">
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M5 28V8h15v20M20 14h7v14M2.5 28h27" />
+                <path d="M9 12h3M15 12h2M9 17h3M15 17h2M9 22h3M15 22h2M23 18h1M23 22h1" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Offices &amp; Professional Workspaces</h3>
+              <p class="residential-places__text">Dependable cleaning for offices, work areas, shared spaces, and professional environments.</p>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M7 28V6h18v22M3 28h26" />
+                <path d="M16 10v10M11 15h10M12 28v-4h8v4" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Medical &amp; Dental Offices</h3>
+              <p class="residential-places__text">Professional cleaning for medical and dental office workspaces and common areas.</p>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M5 13h22v15H5ZM3 13l3-8h20l3 8" />
+                <path d="M3 13a4 4 0 0 0 7 2 4 4 0 0 0 6 0 4 4 0 0 0 6 0 4 4 0 0 0 7-2M10 28v-7h7v7" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Storefronts &amp; Restaurants</h3>
+              <p class="residential-places__text">Consistent cleaning for customer-facing spaces, dining areas, counters, and floors.</p>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M4 28h24M7 28V10l9-6 9 6v18M12 28v-7h8v7" />
+                <path d="M11 13h3M18 13h3M11 17h3M18 17h3" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Daycares, Schools &amp; Other Properties</h3>
+              <p class="residential-places__text">Flexible cleaning for educational spaces and other commercial properties.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-strip" aria-label="How the Serenitees commercial cleaning process works" data-reveal-group>
+      <div class="process-strip__inner">
+        <article class="process-strip__step" data-reveal-item>
+          <span class="process-strip__number" aria-hidden="true">1</span>
+          <h2 class="process-strip__heading">Request a Quote</h2>
+          <p class="process-strip__text">Tell us about your property and cleaning requirements.</p>
+        </article>
+
+        <article class="process-strip__step" data-reveal-item>
+          <span class="process-strip__number" aria-hidden="true">2</span>
+          <h2 class="process-strip__heading">Confirm Your Service</h2>
+          <p class="process-strip__text">We&rsquo;ll confirm the cleaning details, schedule, and property requirements.</p>
+        </article>
+
+        <article class="process-strip__step" data-reveal-item>
+          <span class="process-strip__number" aria-hidden="true">3</span>
+          <h2 class="process-strip__heading">We Clean Your Property</h2>
+          <p class="process-strip__text">Serenitees completes the cleaning based on the agreed service.</p>
+        </article>
+
+        <article class="process-strip__step" data-reveal-item>
+          <span class="process-strip__number" aria-hidden="true">4</span>
+          <h2 class="process-strip__heading">Maintain a Professional Space</h2>
+          <p class="process-strip__text">Welcome your team and customers into a cleaner, well-kept environment.</p>
+        </article>
+      </div>
+
+      <div class="process-strip__broom" aria-hidden="true" data-process-broom>
+        <model-viewer class="process-strip__broom-model" src="../media/3d-objects/broom.glb" alt="" loading="eager" interaction-prompt="none" camera-target="0m 8m 0m" camera-orbit="25deg 75deg 30%" min-camera-orbit="auto auto 5%" max-camera-orbit="auto auto 200%" field-of-view="20deg" orientation="0deg 0deg 0deg" auto-rotate auto-rotate-delay="0" rotation-per-second="180deg" tone-mapping="commerce" exposure="1.1" data-process-broom-model></model-viewer>
+      </div>
+    </section>
+
+    <section class="areas-served" aria-labelledby="commercial-areas-title" data-reveal-individually>
+      <div class="areas-served__inner">
+        <h2 class="areas-served__title" id="commercial-areas-title" data-reveal-item>Areas We Serve</h2>
+        <p class="areas-served__intro" data-reveal-item>Commercial cleaning services available throughout Durham Region and Toronto.</p>
+
+        <div class="areas-served__list">
+          <article class="areas-served__card" data-reveal-item>
+            <div class="areas-served__content">
+              <h3 class="areas-served__heading">Durham Region</h3>
+              <p class="areas-served__text">Dependable commercial cleaning for offices, businesses, and professional properties throughout Durham Region.</p>
+            </div>
+
+            <div class="areas-served__media">
+              <img class="areas-served__image" src="../media/static-images/area/durham-region.webp" alt="A view across Durham Region" width="1300" height="778" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="areas-served__card" data-reveal-item>
+            <div class="areas-served__content">
+              <h3 class="areas-served__heading">Toronto</h3>
+              <p class="areas-served__text">Professional commercial cleaning across Toronto, available for both one-time and recurring needs.</p>
+            </div>
+
+            <div class="areas-served__media">
+              <img class="areas-served__image" src="../media/static-images/area/toronto.webp" alt="The Toronto skyline" width="1440" height="960" loading="lazy" decoding="async">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="residential-faq commercial-faq" aria-labelledby="commercial-faq-title" data-faq-section data-reveal-individually>
+      <div class="residential-faq__inner">
+        <h2 class="residential-faq__title" id="commercial-faq-title" data-reveal-item>Frequently Asked Questions</h2>
+
+        <div class="residential-faq__list">
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="commercial-faq-question-1" aria-expanded="false" aria-controls="commercial-faq-answer-1" data-faq-toggle>
+              <span>What types of commercial properties do you clean?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="commercial-faq-answer-1" role="region" aria-labelledby="commercial-faq-question-1" aria-hidden="true" data-faq-answer>
+              <p>We provide commercial cleaning for offices, medical and dental offices, storefronts, restaurants, daycares, schools, professional workspaces, and other commercial properties throughout Durham Region and Toronto.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="commercial-faq-question-2" aria-expanded="false" aria-controls="commercial-faq-answer-2" data-faq-toggle>
+              <span>Do you offer one-time and recurring commercial cleaning?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="commercial-faq-answer-2" role="region" aria-labelledby="commercial-faq-question-2" aria-hidden="true" data-faq-answer>
+              <p>Yes. Serenitees Cleaning Solutions offers both one-time cleaning and recurring commercial cleaning based on your property&rsquo;s needs and availability.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="commercial-faq-question-3" aria-expanded="false" aria-controls="commercial-faq-answer-3" data-faq-toggle>
+              <span>What can be included in a commercial cleaning?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="commercial-faq-answer-3" role="region" aria-labelledby="commercial-faq-question-3" aria-hidden="true" data-faq-answer>
+              <p>Cleaning can include workspaces, accessible surfaces, tables, counters, common areas, washrooms, floors, dusting, vacuuming, sweeping, mopping, and general commercial upkeep. The service can be tailored to your property and cleaning requirements.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="commercial-faq-question-4" aria-expanded="false" aria-controls="commercial-faq-answer-4" data-faq-toggle>
+              <span>How often can recurring cleaning be scheduled?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="commercial-faq-answer-4" role="region" aria-labelledby="commercial-faq-question-4" aria-hidden="true" data-faq-answer>
+              <p>Recurring cleaning can be arranged weekly, biweekly, monthly, or on a custom recurring schedule depending on your needs and Serenitees Cleaning Solutions&rsquo; availability.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="commercial-faq-question-5" aria-expanded="false" aria-controls="commercial-faq-answer-5" data-faq-toggle>
+              <span>Can the cleaning be tailored to our property?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="commercial-faq-answer-5" role="region" aria-labelledby="commercial-faq-question-5" aria-hidden="true" data-faq-answer>
+              <p>Yes. Cleaning services can be adjusted based on the property type, size, condition, high-use areas, and the specific spaces you would like cleaned.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="commercial-faq-question-6" aria-expanded="false" aria-controls="commercial-faq-answer-6" data-faq-toggle>
+              <span>Can we discuss cleaning around our business hours?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="commercial-faq-answer-6" role="region" aria-labelledby="commercial-faq-question-6" aria-hidden="true" data-faq-answer>
+              <p>Yes. Include your preferred schedule and whether cleaning is needed during or outside business hours when requesting a quote. Serenitees Cleaning Solutions will discuss the requirements and confirm availability with you.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="commercial-faq-question-7" aria-expanded="false" aria-controls="commercial-faq-answer-7" data-faq-toggle>
+              <span>How do I request a commercial cleaning quote?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="commercial-faq-answer-7" role="region" aria-labelledby="commercial-faq-question-7" aria-hidden="true" data-faq-answer>
+              <p>Complete the Request a Quote form with details about your property, preferred schedule, and cleaning requirements. Serenitees Cleaning Solutions will contact you to discuss the service, availability, and your quote.</p>
+            </div>
+          </article>
+
+          <article class="residential-faq-item" data-reveal-item>
+            <button class="residential-faq-item__question" type="button" id="commercial-faq-question-8" aria-expanded="false" aria-controls="commercial-faq-answer-8" data-faq-toggle>
+              <span>What areas do you serve?</span>
+              <span class="residential-faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="residential-faq-item__answer" id="commercial-faq-answer-8" role="region" aria-labelledby="commercial-faq-question-8" aria-hidden="true" data-faq-answer>
+              <p>Commercial cleaning services are available throughout Durham Region and Toronto.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-about home-cta" aria-labelledby="commercial-cta-title" data-reveal-group>
+      <div class="home-about__inner">
+        <div class="home-about__media" data-reveal-item>
+          <img class="home-about__image" src="../media/static-images/commercial/image-3.webp" alt="A clean and professional commercial interior" width="800" height="533" loading="lazy" decoding="async">
+        </div>
+
+        <div class="home-about__content">
+          <div class="home-about__copy">
+            <h2 class="home-about__title" id="commercial-cta-title" data-reveal-item>Ready for a Cleaner, More Professional Space?</h2>
+            <p class="home-about__text" data-reveal-item>Tell us about your commercial property and cleaning needs, and we&rsquo;ll help you arrange a service that fits your space and schedule.</p>
+            <div class="home-cta__actions" data-reveal-item>
+              <a class="home-hero__cta home-hero__cta--primary" href="request-a-quote.html">Request a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer" data-reveal-group>
     <div class="site-footer__inner">
