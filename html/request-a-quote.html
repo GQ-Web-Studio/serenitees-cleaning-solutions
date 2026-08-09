@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Request a Quote | Serenitees Cleaning Solutions</title>
+  <meta name="description" content="Request a personalized residential or commercial cleaning quote from Serenitees Cleaning Solutions in Durham Region and Toronto.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Serenitees Cleaning Solutions">
+  <meta name="publisher" content="Serenitees Cleaning Solutions">
+  <meta name="application-name" content="Serenitees Cleaning Solutions">
+  <meta name="geo.region" content="CA-ON">
+
+  <link rel="canonical" href="https://www.FINAL-DOMAIN.com/html/request-a-quote.html">
+  <link rel="icon" href="../media/logo/favicon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=20260809-3">
+
+  <meta property="og:site_name" content="Serenitees Cleaning Solutions">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Request a Quote | Serenitees Cleaning Solutions">
+  <meta property="og:description" content="Share your cleaning needs and request a personalized quote from Serenitees Cleaning Solutions.">
+  <meta property="og:url" content="https://www.FINAL-DOMAIN.com/html/request-a-quote.html">
+  <meta property="og:image" content="https://www.FINAL-DOMAIN.com/media/logo/logo.webp">
+  <meta property="og:image:alt" content="Serenitees Cleaning Solutions logo">
+
+  <script src="../js/request-a-quote.js?v=20260809-1" defer></script>
+</head>
+<body class="request-quote-page">
+  <main class="request-quote-main" id="main-content">
+    <section class="request-quote-card" aria-labelledby="request-quote-title">
+      <div class="request-quote-card__header">
+        <h1 class="request-quote-card__title" id="request-quote-title">Request a Quote</h1>
+        <p class="request-quote-card__intro">Share a few details about your cleaning needs and Serenitees Cleaning Solutions will contact you to discuss availability and your quote.</p>
+      </div>
+
+      <form class="request-quote-form" method="post" enctype="multipart/form-data" data-quote-form>
+        <div class="request-quote-form__field">
+          <label for="quote-full-name">Full Name</label>
+          <input id="quote-full-name" name="full_name" type="text" placeholder="Your full name" autocomplete="name" required>
+        </div>
+
+        <div class="request-quote-form__field">
+          <label for="quote-email">Email Address</label>
+          <input id="quote-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+
+        <div class="request-quote-form__field">
+          <label for="quote-phone">Phone Number</label>
+          <input id="quote-phone" name="phone" type="tel" placeholder="Your phone number" autocomplete="tel" required>
+        </div>
+
+        <div class="request-quote-form__field">
+          <label for="quote-service">Service Required</label>
+          <select id="quote-service" name="service_required" required data-service-select>
+            <option value="" selected disabled>Select a service</option>
+            <option value="residential">Residential Cleaning</option>
+            <option value="commercial">Commercial Cleaning</option>
+          </select>
+        </div>
+
+        <div class="request-quote-form__field">
+          <label for="quote-frequency">Cleaning Frequency</label>
+          <select id="quote-frequency" name="cleaning_frequency" required>
+            <option value="" selected disabled>Select frequency</option>
+            <option value="one-time">One-Time</option>
+            <option value="weekly">Weekly</option>
+            <option value="biweekly">Biweekly</option>
+            <option value="monthly">Monthly</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="request-quote-form__field">
+          <label for="quote-location">Location / Area</label>
+          <input id="quote-location" name="location" type="text" placeholder="City or area" autocomplete="address-level2" required>
+        </div>
+
+        <div class="request-quote-form__field">
+          <label for="quote-date">Preferred Cleaning Date <span class="request-quote-form__optional">Optional</span></label>
+          <input id="quote-date" name="preferred_cleaning_date" type="date">
+        </div>
+
+        <div class="request-quote-form__conditional" hidden data-residential-fields>
+          <div class="request-quote-form__field">
+            <label for="quote-bedrooms">Bedrooms</label>
+            <input id="quote-bedrooms" name="bedrooms" type="number" min="0" step="1" placeholder="Number of bedrooms" disabled data-required-when-visible="true">
+          </div>
+
+          <div class="request-quote-form__field">
+            <label for="quote-bathrooms">Bathrooms</label>
+            <input id="quote-bathrooms" name="bathrooms" type="number" min="0" step="1" placeholder="Number of bathrooms" disabled data-required-when-visible="true">
+          </div>
+        </div>
+
+        <div class="request-quote-form__conditional request-quote-form__conditional--single" hidden data-commercial-fields>
+          <div class="request-quote-form__field">
+            <label for="quote-business-type">Type of Business or Property</label>
+            <input id="quote-business-type" name="business_type" type="text" placeholder="e.g. Office, restaurant, storefront" disabled data-required-when-visible="true">
+          </div>
+        </div>
+
+        <div class="request-quote-form__field request-quote-form__field--full">
+          <label for="quote-details">Tell Us About Your Cleaning Needs</label>
+          <textarea id="quote-details" name="cleaning_needs" placeholder="Tell us what you&rsquo;d like cleaned and any other details we should know." required></textarea>
+        </div>
+
+        <div class="request-quote-form__field request-quote-form__field--full">
+          <label for="quote-photos">Upload Photos <span class="request-quote-form__optional">Optional</span></label>
+          <input id="quote-photos" name="photos" type="file" accept="image/*" multiple aria-describedby="quote-photos-help">
+          <p class="request-quote-form__helper" id="quote-photos-help">Upload photos of the space if you&rsquo;d like.</p>
+        </div>
+
+        <div class="request-quote-form__actions">
+          <button class="home-hero__cta home-hero__cta--primary request-quote-form__submit" type="submit">Request My Quote</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
