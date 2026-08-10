@@ -330,6 +330,10 @@
   background-image: url("../media/static-images/commercial/image-10.webp");
 }
 
+.about-hero {
+  background-image: url("../media/static-images/residential/image-5.webp");
+}
+
 .home-hero::before {
   position: absolute;
   inset: 0;
@@ -800,6 +804,18 @@
   border-radius: 50%;
 }
 
+.process-strip__icon {
+  width: clamp(2.2rem, 3vw, 2.55rem);
+  height: clamp(2.2rem, 3vw, 2.55rem);
+  flex: 0 0 auto;
+  color: #fafafa;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .process-strip__heading {
   margin: 0.65rem 0 0;
   color: #fafafa;
@@ -903,6 +919,10 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.about-approach__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .residential-included .spaces-clean-card__body {
   padding: clamp(1.25rem, 2vw, 1.65rem);
 }
@@ -946,10 +966,39 @@
   text-wrap: pretty;
 }
 
+.about-approach .spaces-clean-card__body {
+  align-items: center;
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  text-align: center;
+}
+
+.about-approach .spaces-clean-card__icon {
+  width: clamp(2.75rem, 3.5vw, 3.25rem);
+  height: clamp(2.75rem, 3.5vw, 3.25rem);
+  color: #3d817f;
+}
+
+.about-commitment .spaces-clean-card__icon {
+  color: #d6a44a;
+}
+
+.about-approach .spaces-clean-card__title {
+  width: 100%;
+  font-size: clamp(1.65rem, 2.2vw, 2.15rem);
+  text-align: center;
+}
+
 @media (max-width: 840px) {
   .residential-included__grid,
   .residential-places__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-approach__grid {
+    grid-template-columns: 1fr;
+    width: min(100%, 44rem);
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -1562,6 +1611,7 @@
 .has-reveal-motion .residential-included .spaces-clean-card:nth-child(4) { --spaces-reveal-delay: 440ms; }
 .has-reveal-motion .residential-places .spaces-clean-card:nth-child(3) { --spaces-reveal-delay: 340ms; }
 .has-reveal-motion .residential-places .spaces-clean-card:nth-child(4) { --spaces-reveal-delay: 440ms; }
+.has-reveal-motion .about-approach .spaces-clean-card:nth-child(3) { --spaces-reveal-delay: 340ms; }
 
 .has-reveal-motion .spaces-clean.is-revealed [data-reveal-item] {
   opacity: 1;

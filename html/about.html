@@ -16,8 +16,9 @@
   <link rel="icon" href="../media/logo/favicon.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="../media/static-images/residential/image-5.webp" type="image/webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=20260809-5">
+  <link rel="stylesheet" href="../css/style.css?v=20260810-4">
 
   <meta property="og:site_name" content="Serenitees Cleaning Solutions">
   <meta property="og:locale" content="en_CA">
@@ -28,9 +29,9 @@
   <meta property="og:image" content="https://www.FINAL-DOMAIN.com/media/logo/logo.webp">
   <meta property="og:image:alt" content="Serenitees Cleaning Solutions logo">
 
-  <script src="../js/script.js" defer></script>
+  <script src="../js/script.js?v=20260809-6" defer></script>
 </head>
-<body>
+<body class="home-page">
   <header class="site-header" data-site-header>
     <div class="site-header__inner">
       <a class="site-header__logo-link" href="../index.html" aria-label="Serenitees Cleaning Solutions home">
@@ -69,7 +70,241 @@
     </nav>
   </header>
 
-  <main id="main-content"></main>
+  <main id="main-content" class="home-main">
+    <section class="home-hero about-hero" aria-labelledby="about-hero-title" data-reveal-group>
+      <div class="home-hero__inner">
+        <div class="home-hero__content">
+          <h1 class="home-hero__title" id="about-hero-title" data-reveal-item>More Than Cleaning, A Commitment to Care</h1>
+          <p class="home-hero__text" data-reveal-item>Dependable cleaning rooted in trust, consistency, and genuine care for every space we serve</p>
+          <div class="home-hero__actions" aria-label="About Serenitees actions" data-reveal-item>
+            <a class="home-hero__cta home-hero__cta--primary" href="request-a-quote.html">Request a Quote</a>
+            <a class="home-hero__cta home-hero__cta--secondary" href="#our-story">Our Story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Serenitees values" data-reveal-group>
+      <div class="trust-strip__inner">
+        <article class="trust-strip__item" data-reveal-item>
+          <svg class="trust-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 3 27 7v8c0 7-4.7 11.8-11 14-6.3-2.2-11-7-11-14V7Z" />
+            <path d="m11 16 3.2 3.2L21.5 12" />
+          </svg>
+          <p class="trust-strip__heading">Built on Trust</p>
+        </article>
+
+        <article class="trust-strip__item" data-reveal-item>
+          <svg class="trust-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="12" />
+            <path d="m10.5 16 3.5 3.5 7.5-8" />
+          </svg>
+          <p class="trust-strip__heading">Professional &amp; Dependable</p>
+        </article>
+
+        <article class="trust-strip__item" data-reveal-item>
+          <svg class="trust-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 28S4 21 4 12.5A7.5 7.5 0 0 1 16 6.4a7.5 7.5 0 0 1 12 6.1C28 21 16 28 16 28Z" />
+          </svg>
+          <p class="trust-strip__heading">Genuine Care</p>
+        </article>
+
+        <article class="trust-strip__item" data-reveal-item>
+          <svg class="trust-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="m8 3 1.2 3.3L12.5 8 9.2 9.7 8 13l-1.2-3.3L3.5 8l3.3-1.7L8 3Z" />
+            <path d="m24 17 1.1 2.9L28 21.5l-2.9 1.6L24 26l-1.1-2.9-2.9-1.6 2.9-1.6L24 17Z" />
+            <path d="M15 7v19M12 12h6M15 19h5M23 5v10M20 9h6" />
+          </svg>
+          <p class="trust-strip__heading">Attention to Detail</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-about" id="who-we-are" aria-labelledby="who-we-are-title" data-reveal-group>
+      <div class="home-about__inner">
+        <div class="home-about__content">
+          <div class="home-about__copy">
+            <h2 class="home-about__title" id="who-we-are-title" data-reveal-item>Who We Are</h2>
+            <p class="home-about__text" data-reveal-item>Serenitees Cleaning Solutions provides dependable residential and commercial cleaning throughout Durham Region and Toronto. We work with homeowners, families, professionals, and businesses to help keep their spaces clean, comfortable, and well maintained.</p>
+            <p class="home-about__text" data-reveal-item>From one-time cleaning to recurring service, each job is approached with professionalism, attention to detail, and genuine care. Our goal is to make maintaining your space easier while delivering a service you can feel confident relying on.</p>
+          </div>
+        </div>
+
+        <div class="home-about__media" data-reveal-item>
+          <video class="home-about__image" autoplay muted loop playsinline preload="metadata" aria-label="Serenitees Cleaning Solutions caring for a professionally cleaned space">
+            <source src="../media/videos/video-15.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-about" id="our-story" aria-labelledby="our-story-title" data-reveal-group>
+      <div class="home-about__inner">
+        <div class="home-about__media" data-reveal-item>
+          <video class="home-about__image" autoplay muted loop playsinline preload="metadata" aria-label="The story and care behind Serenitees Cleaning Solutions">
+            <source src="../media/videos/video-14-trimmed.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="home-about__content">
+          <div class="home-about__copy">
+            <h2 class="home-about__title" id="our-story-title" data-reveal-item>Our Story</h2>
+            <p class="home-about__text" data-reveal-item>Serenitees Cleaning Solutions began with an understanding of how overwhelming it can be to balance work, family, and everyday responsibilities while still trying to keep a home or business looking its best.</p>
+            <p class="home-about__text" data-reveal-item>The business was created to offer more than just cleaning. From the beginning, the focus has been on providing dependable service built around trust, professionalism, consistency, genuine care, attention to detail, and respect for every client&rsquo;s space.</p>
+            <p class="home-about__text" data-reveal-item>The name Serenitees reflects the feeling we want every client to experience after a cleaning &mdash; a greater sense of serenity, comfort, and peace of mind.</p>
+            <p class="home-about__text" data-reveal-item>As Serenitees continues to grow, the goal remains the same: make life easier for the people and businesses we serve, build lasting relationships, and leave every space fresh, healthy, and well maintained.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-strip" aria-label="The values that guide Serenitees Cleaning Solutions" data-reveal-group>
+      <div class="process-strip__inner">
+        <article class="process-strip__step" data-reveal-item>
+          <svg class="process-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 3 27 7v8c0 7-4.7 11.8-11 14-6.3-2.2-11-7-11-14V7Z" />
+            <path d="m11 16 3.2 3.2L21.5 12" />
+          </svg>
+          <h2 class="process-strip__heading">Trust</h2>
+          <p class="process-strip__text">Dependable service built on honesty, care, and respect for every space.</p>
+        </article>
+
+        <article class="process-strip__step" data-reveal-item>
+          <svg class="process-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M4 11h24v16H4ZM11 11V7h10v4M4 17h24" />
+            <path d="M14 16h4v3h-4Z" />
+          </svg>
+          <h2 class="process-strip__heading">Professionalism</h2>
+          <p class="process-strip__text">A reliable, thoughtful approach from the first interaction to the final result.</p>
+        </article>
+
+        <article class="process-strip__step" data-reveal-item>
+          <svg class="process-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M25.5 10A11 11 0 0 0 7 7.5L4 11M4 5v6h6" />
+            <path d="M6.5 22A11 11 0 0 0 25 24.5l3-3.5M28 27v-6h-6" />
+            <path d="m11.5 16 3 3 6-7" />
+          </svg>
+          <h2 class="process-strip__heading">Consistency</h2>
+          <p class="process-strip__text">Steady attention and dependable service you can feel confident relying on.</p>
+        </article>
+
+        <article class="process-strip__step" data-reveal-item>
+          <svg class="process-strip__icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 28S4 21 4 12.5A7.5 7.5 0 0 1 16 6.4a7.5 7.5 0 0 1 12 6.1C28 21 16 28 16 28Z" />
+          </svg>
+          <h2 class="process-strip__heading">Genuine Care</h2>
+          <p class="process-strip__text">Thoughtful cleaning centered around the people and spaces we&rsquo;re trusted to care for.</p>
+        </article>
+      </div>
+
+    </section>
+
+    <section class="spaces-clean about-approach" aria-labelledby="about-approach-title" data-reveal-group>
+      <div class="spaces-clean__inner">
+        <h2 class="spaces-clean__title" id="about-approach-title" data-reveal-item>Our Approach</h2>
+        <p class="residential-places__intro" data-reveal-item>Cleaning shaped around your space, your needs, and the level of care it requires</p>
+
+        <div class="spaces-clean__grid about-approach__grid">
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M4 8h8M18 8h10M4 16h14M24 16h4M4 24h5M15 24h13" />
+                <circle cx="15" cy="8" r="3" />
+                <circle cx="21" cy="16" r="3" />
+                <circle cx="12" cy="24" r="3" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Tailored to Your Space</h3>
+              <p class="residential-places__text">We adapt each service to the type, condition, and cleaning needs of your property.</p>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z" />
+                <circle cx="16" cy="16" r="4" />
+                <path d="m25 3 .9 2.1L28 6l-2.1.9L25 9l-.9-2.1L22 6l2.1-.9Z" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Attention to Detail</h3>
+              <p class="residential-places__text">We focus on the details that help your space feel genuinely clean, fresh, and cared for.</p>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16 3 27 7v8c0 7-4.7 11.8-11 14-6.3-2.2-11-7-11-14V7Z" />
+                <path d="m11 16 3.2 3.2L21.5 12" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Dependable Service</h3>
+              <p class="residential-places__text">We approach every cleaning with consistency, professionalism, and respect for your space.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spaces-clean about-approach about-commitment" aria-labelledby="about-commitment-title" data-reveal-group>
+      <div class="spaces-clean__inner">
+        <h2 class="spaces-clean__title" id="about-commitment-title" data-reveal-item>Our Commitment</h2>
+        <p class="residential-places__intro" data-reveal-item>A dependable cleaning experience built around care, consistency, and lasting trust</p>
+
+        <div class="spaces-clean__grid about-approach__grid">
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="m4 17 5-5 6 5a2 2 0 0 0 2.8 0l2.2-2.2" />
+                <path d="m28 17-5-5-5.5 5.5M4 17l8 8a2 2 0 0 0 2.8 0l.7-.7M28 17l-8 8a2 2 0 0 1-2.8 0L12 20" />
+                <path d="M12 8.5a4.5 4.5 0 0 1 4 2.4 4.5 4.5 0 0 1 8.5 2.1" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Building Lasting Relationships</h3>
+              <p class="residential-places__text">We aim to earn your trust through dependable service and genuine care every time we enter your space.</p>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="m16 3 3.3 7 7.7 1.1-5.5 5.4 1.3 7.6-6.8-3.6-6.8 3.6 1.3-7.6L5 11.1l7.7-1.1Z" />
+                <path d="m26 3 .8 2.2L29 6l-2.2.8L26 9l-.8-2.2L23 6l2.2-.8ZM5 23l.8 2.2L8 26l-2.2.8L5 29l-.8-2.2L2 26l2.2-.8Z" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Exceeding Expectations</h3>
+              <p class="residential-places__text">We put care into the details and work to leave every space feeling fresh, comfortable, and well maintained.</p>
+            </div>
+          </article>
+
+          <article class="spaces-clean-card cleaning-service-card" data-reveal-item>
+            <div class="spaces-clean-card__body">
+              <svg class="spaces-clean-card__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16 3 27 7v8c0 7-4.7 11.8-11 14-6.3-2.2-11-7-11-14V7Z" />
+                <path d="m11 16 3.2 3.2L21.5 12" />
+              </svg>
+              <h3 class="spaces-clean-card__title">Service You Can Rely On</h3>
+              <p class="residential-places__text">As Serenitees grows, our commitment to professionalism, consistency, and respect remains at the heart of every service.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-about home-cta" aria-labelledby="about-cta-title" data-reveal-group>
+      <div class="home-about__inner">
+        <div class="home-about__content">
+          <div class="home-about__copy">
+            <h2 class="home-about__title" id="about-cta-title" data-reveal-item>Ready for a Cleaner, More Peaceful Space?</h2>
+            <p class="home-about__text" data-reveal-item>Let Serenitees Cleaning Solutions take care of the cleaning with dependable service tailored to your home or business</p>
+            <div class="home-cta__actions" data-reveal-item>
+              <a class="home-hero__cta home-hero__cta--primary" href="request-a-quote.html">Request a Quote</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-about__media" data-reveal-item>
+          <img class="home-about__image" src="../media/static-images/commercial/image-10.webp" alt="A professionally cleaned and peaceful commercial space" width="1100" height="600" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer" data-reveal-group>
     <div class="site-footer__inner">
