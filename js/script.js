@@ -70,14 +70,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const individualRevealItems = document.querySelectorAll("[data-reveal-individually] [data-reveal-item]");
   const individualRevealTitles = document.querySelectorAll(
     "[data-reveal-individually] .cleaning-services__title[data-reveal-item], " +
+    "[data-reveal-individually] .cleaning-services__intro[data-reveal-item], " +
     "[data-reveal-individually] .areas-served__title[data-reveal-item], " +
     "[data-reveal-individually] .areas-served__intro[data-reveal-item], " +
+    "[data-reveal-individually] .contact-details__title[data-reveal-item], " +
+    "[data-reveal-individually] .contact-details__intro[data-reveal-item], " +
     "[data-reveal-individually] .residential-faq__title[data-reveal-item]"
   );
   const individualRevealCards = document.querySelectorAll(
     "[data-reveal-individually] .cleaning-service-card[data-reveal-item], " +
     "[data-reveal-individually] .areas-served__card[data-reveal-item], " +
-    "[data-reveal-individually] .residential-faq-item[data-reveal-item]"
+    "[data-reveal-individually] .residential-faq-item[data-reveal-item], " +
+    "[data-reveal-individually] .contact-details__panel[data-reveal-item], " +
+    "[data-reveal-individually] .contact-details__information[data-reveal-item]"
   );
 
   if (revealGroups.length || individualRevealItems.length) {

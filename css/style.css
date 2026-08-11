@@ -334,6 +334,10 @@
   background-image: url("../media/static-images/residential/image-5.webp");
 }
 
+.contact-hero {
+  background-image: url("../media/static-images/other/telephone.webp");
+}
+
 .home-hero::before {
   position: absolute;
   inset: 0;
@@ -1239,6 +1243,25 @@
   padding: 0 clamp(1.15rem, 2.8vw, 1.7rem) clamp(1.2rem, 2.5vw, 1.55rem);
 }
 
+.contact-faq .residential-faq-item__answer a {
+  color: #326f6e;
+  font-weight: 700;
+  text-decoration-color: rgba(50, 111, 110, 0.45);
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.16em;
+}
+
+.contact-faq .residential-faq-item__answer a:hover,
+.contact-faq .residential-faq-item__answer a:focus-visible {
+  color: #245b5a;
+  text-decoration-color: currentColor;
+}
+
+.contact-faq .residential-faq-item__answer a:focus-visible {
+  outline: 3px solid rgba(214, 164, 74, 0.48);
+  outline-offset: 3px;
+}
+
 .residential-faq-item.is-open .residential-faq-item__answer {
   opacity: 1;
 }
@@ -1443,6 +1466,15 @@
     letter-spacing 760ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.has-reveal-motion .cleaning-services__intro[data-reveal-item] {
+  filter: blur(3px);
+  transform: translateY(0.75rem);
+  transition:
+    opacity 620ms ease 100ms,
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1) 100ms,
+    filter 620ms ease 100ms;
+}
+
 .has-reveal-motion :where(.cleaning-services) .cleaning-service-card[data-reveal-item] {
   clip-path: inset(0 0 1.25rem 0 round 1.4rem);
   filter: blur(4px);
@@ -1619,6 +1651,12 @@
   transform: translateY(0) scale(1);
 }
 
+.has-reveal-motion .contact-details [data-reveal-item].is-revealed {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
 .has-reveal-motion .spaces-clean.is-revealed .spaces-clean-card:hover {
   transform: translateY(-0.35rem) scale(1.018);
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
@@ -1738,6 +1776,10 @@
   transform: translateY(0) scale(1);
 }
 
+.has-reveal-motion .home-hero.is-revealed .home-hero__title[data-reveal-item] {
+  clip-path: inset(-0.12em);
+}
+
 .has-reveal-motion .home-hero.is-revealed .home-hero__actions[data-reveal-item] {
   clip-path: none;
 }
@@ -1812,12 +1854,16 @@
 .request-quote-card {
   width: min(100%, 58rem);
   padding: clamp(1.5rem, 4vw, 3.25rem);
-  background-color: rgba(250, 250, 250, 0.95);
-  border: 1px solid rgba(250, 250, 250, 0.58);
-  border-radius: clamp(1.25rem, 3vw, 2rem);
-  box-shadow: 0 30px 80px rgba(13, 40, 40, 0.28);
-  -webkit-backdrop-filter: blur(18px) saturate(115%);
-  backdrop-filter: blur(18px) saturate(115%);
+  color: #454044;
+  font-family: "Manrope", sans-serif;
+  background-color: #f1f6f5;
+  background-image: url("../media/texture/texture-11.webp");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 420px 420px;
+  border: 1px solid rgba(61, 129, 127, 0.24);
+  border-radius: 1.4rem;
+  box-shadow: 0 20px 48px rgba(26, 52, 52, 0.12);
 }
 
 .request-quote-card__header {
@@ -1826,7 +1872,8 @@
   text-align: center;
 }
 
-.areas-served__intro {
+.areas-served__intro,
+.cleaning-services__intro {
   max-width: 48rem;
   margin: clamp(1rem, 2vw, 1.35rem) auto 0;
   color: #454044;
@@ -1838,9 +1885,14 @@
   text-wrap: pretty;
 }
 
+#contact-areas-served-title + .areas-served__intro,
+#contact-cleaning-services-title + .cleaning-services__intro {
+  margin-top: clamp(0.35rem, 0.8vw, 0.6rem);
+}
+
 .request-quote-card__title {
   margin: 0;
-  color: #173334;
+  color: #0b090b;
   font-family: "DM Serif Display", serif;
   font-size: clamp(2.75rem, 6vw, 4.75rem);
   font-weight: 400;
@@ -1852,6 +1904,7 @@
 .request-quote-card__intro {
   margin: clamp(1rem, 2vw, 1.3rem) 0 0;
   color: #454044;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(0.96rem, 1.4vw, 1.08rem);
   font-weight: 500;
   line-height: 1.7;
@@ -1862,6 +1915,8 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem clamp(1rem, 2.5vw, 1.5rem);
+  color: #454044;
+  font-family: "Manrope", sans-serif;
 }
 
 .request-quote-form__field {
@@ -1891,7 +1946,8 @@
 }
 
 .request-quote-form label {
-  color: #2d4141;
+  color: #454044;
+  font-family: "Manrope", sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 1.35;
@@ -1983,6 +2039,179 @@
   cursor: pointer;
 }
 
+.contact-details__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  align-items: start;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  margin-top: clamp(2.25rem, 4.5vw, 3.75rem);
+}
+
+.contact-details {
+  color: #454044;
+  font-family: "Manrope", sans-serif;
+}
+
+.contact-details__header {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-details__title {
+  padding-bottom: 0.08em;
+  margin: 0;
+  color: #0b090b;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.75rem, 5vw, 4.75rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.contact-details__intro {
+  margin: clamp(0.35rem, 0.8vw, 0.6rem) 0 0;
+  color: #454044;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.contact-details__panel {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background-color: #f1f6f5;
+  background-image: url("../media/texture/texture-11.webp");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 420px 420px;
+  border: 1px solid rgba(61, 129, 127, 0.24);
+  border-radius: 1.4rem;
+  box-shadow: 0 20px 48px rgba(26, 52, 52, 0.12);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.contact-details .request-quote-card__header {
+  max-width: none;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  text-align: left;
+}
+
+.contact-details__panel .request-quote-card__header {
+  text-align: center;
+}
+
+.contact-details .request-quote-card__title {
+  color: #0b090b;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.contact-details .request-quote-card__intro {
+  color: #454044;
+  font-family: "Manrope", sans-serif;
+}
+
+.contact-details .request-quote-form {
+  grid-template-columns: 1fr;
+  color: #454044;
+  font-family: "Manrope", sans-serif;
+}
+
+.contact-details .request-quote-form label,
+.contact-details .request-quote-form__optional {
+  font-family: "Manrope", sans-serif;
+}
+
+.contact-details .request-quote-form label {
+  color: #454044;
+}
+
+.contact-details .request-quote-form__actions {
+  justify-content: flex-start;
+}
+
+.contact-details__information {
+  align-self: center;
+  min-width: 0;
+  padding: 0;
+}
+
+.contact-details__contact-list {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin: clamp(1.75rem, 3.5vw, 2.5rem) 0 0;
+  list-style: none;
+}
+
+.contact-details__contact-link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  color: #454044;
+  text-decoration: none;
+  background-color: #f1f6f5;
+  background-image: url("../media/texture/texture-11.webp");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 420px 420px;
+  border: 1px solid rgba(61, 129, 127, 0.22);
+  border-radius: 0.9rem;
+  box-shadow: 0 12px 28px rgba(26, 52, 52, 0.08);
+  transition: color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.contact-details__contact-link:hover,
+.contact-details__contact-link:focus-visible {
+  color: #326f6e;
+  border-color: rgba(61, 129, 127, 0.5);
+  box-shadow: 0 12px 28px rgba(26, 52, 52, 0.12);
+  transform: translateY(-0.12rem);
+}
+
+.contact-details__contact-link:focus-visible {
+  outline: 3px solid rgba(214, 164, 74, 0.58);
+  outline-offset: 3px;
+}
+
+.contact-details__contact-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #3d817f;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-details__contact-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.18rem;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.86rem, 1.1vw, 0.96rem);
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.contact-details__contact-label {
+  color: #0b090b;
+  font-weight: 700;
+}
+
 @keyframes request-quote-gradient-shift {
   0% {
     background-position: 0% 10%, 100% 90%, 0% 50%;
@@ -2006,6 +2235,19 @@
   .request-quote-form,
   .request-quote-form__conditional {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 840px) {
+  .contact-details__grid {
+    grid-template-columns: 1fr;
+    width: min(100%, 44rem);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .contact-details__information .request-quote-card__header {
+    text-align: center;
   }
 }
 
@@ -2623,6 +2865,13 @@
 
   .areas-served__media,
   .areas-served__media:hover {
+    transform: none;
+    transition: none;
+  }
+
+  .contact-details__contact-link,
+  .contact-details__contact-link:hover,
+  .contact-details__contact-link:focus-visible {
     transform: none;
     transition: none;
   }
