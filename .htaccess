@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# Redirect legacy public HTML paths to their clean canonical URLs.
+# THE_REQUEST prevents these rules from firing after an internal rewrite.
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[\s?]) [NC]
+RewriteRule ^index\.html$ https://sereniteescleaning.ca/ [R=301,L,NE]
+
+RewriteCond %{THE_REQUEST} \s/+html/(about|residential-cleaning|commercial-cleaning|contact|request-a-quote|privacy-policy)\.html(?:[\s?]) [NC]
+RewriteRule ^html/(about|residential-cleaning|commercial-cleaning|contact|request-a-quote|privacy-policy)\.html$ https://sereniteescleaning.ca/$1 [R=301,L,NE]
+
+# Accept an accidental trailing slash but keep the public URL extensionless.
+RewriteRule ^(about|residential-cleaning|commercial-cleaning|contact|request-a-quote|privacy-policy)/$ https://sereniteescleaning.ca/$1 [R=301,L,NE]
+
+# Use one secure, non-www hostname for every public URL.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^sereniteescleaning\.ca$ [NC]
+RewriteRule ^ https://sereniteescleaning.ca%{REQUEST_URI} [R=301,L,NE]
+
+# Serve the existing static HTML files behind the clean public URLs.
+RewriteRule ^(about|residential-cleaning|commercial-cleaning|contact|request-a-quote|privacy-policy)$ html/$1.html [L]
+
+ErrorDocument 404 /404.html

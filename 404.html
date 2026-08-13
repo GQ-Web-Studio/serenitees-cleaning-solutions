@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Page Not Found | Serenitees Cleaning Solutions</title>
+  <meta name="description" content="The page you requested could not be found. Return to Serenitees Cleaning Solutions or explore our residential and commercial cleaning services.">
+  <meta name="robots" content="noindex, follow">
+
+  <script>
+    const pageBase = document.createElement("base");
+    pageBase.href = window.location.protocol === "file:" ? "./" : "/";
+    document.head.append(pageBase);
+  </script>
+  <link rel="icon" href="media/logo/favicon.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260812-44">
+</head>
+<body class="not-found-page">
+  <main class="not-found-main" id="main-content">
+    <section class="not-found-card" aria-labelledby="not-found-title">
+      <a class="not-found-brand" href="/" data-file-href="index.html" aria-label="Serenitees Cleaning Solutions home">
+        <img src="media/logo/favicon.webp" alt="" width="2400" height="2400">
+        <span>Serenitees Cleaning Solutions</span>
+      </a>
+
+      <p class="not-found-code" aria-hidden="true">404</p>
+      <h1 class="not-found-title" id="not-found-title">This Space Couldn&rsquo;t Be Found</h1>
+      <p class="not-found-text">The page may have moved or the link may be incorrect. Choose where you&rsquo;d like to go next.</p>
+
+      <div class="not-found-actions" aria-label="Helpful pages">
+        <a class="home-hero__cta home-hero__cta--primary" href="/" data-file-href="index.html">Return Home</a>
+        <a class="home-hero__cta home-hero__cta--secondary" href="/request-a-quote" data-file-href="html/request-a-quote.html">Request a Quote</a>
+      </div>
+
+      <nav class="not-found-links" aria-label="Cleaning services">
+        <a href="/residential-cleaning" data-file-href="html/residential-cleaning.html">Residential Cleaning</a>
+        <a href="/commercial-cleaning" data-file-href="html/commercial-cleaning.html">Commercial Cleaning</a>
+        <a href="/contact" data-file-href="html/contact.html">Contact Serenitees</a>
+      </nav>
+    </section>
+  </main>
+  <script>
+    if (window.location.protocol === "file:") {
+      document.querySelectorAll("[data-file-href]").forEach((link) => {
+        link.setAttribute("href", link.dataset.fileHref);
+      });
+    }
+  </script>
+</body>
+</html>
