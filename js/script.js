@@ -3,13 +3,17 @@ document.documentElement.classList.add("has-reveal-motion");
 document.addEventListener("DOMContentLoaded", () => {
   const productionHosts = new Set(["sereniteescleaning.ca", "www.sereniteescleaning.ca"]);
   const isFilePreview = window.location.protocol === "file:";
-  const isProduction = productionHosts.has(window.location.hostname.toLowerCase());
+  const currentHostname = window.location.hostname.toLowerCase();
+  const isProduction = productionHosts.has(currentHostname);
+  const isGitHubPages = currentHostname.endsWith(".github.io");
 
   if (!isProduction) {
     const normalizedPagePath = decodeURIComponent(window.location.pathname).replace(/\\/g, "/");
     const isHtmlFile = isFilePreview && /\/html\/[^/]+\.html$/i.test(normalizedPagePath);
     const filePagePrefix = isHtmlFile ? "" : "html/";
-    const localPreviewRoutes = new Map(isFilePreview ? [
+    const githubProjectName = isGitHubPages ? normalizedPagePath.split("/").filter(Boolean)[0] : "";
+    const githubProjectBase = githubProjectName ? `/${githubProjectName}` : "";
+    const previewRoutes = new Map(isFilePreview ? [
       ["/", isHtmlFile ? "../index.html" : "index.html"],
       ["/about", `${filePagePrefix}about.html`],
       ["/residential-cleaning", `${filePagePrefix}residential-cleaning.html`],
@@ -17,6 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
       ["/contact", `${filePagePrefix}contact.html`],
       ["/request-a-quote", `${filePagePrefix}request-a-quote.html`],
       ["/privacy-policy", `${filePagePrefix}privacy-policy.html`]
+    ] : isGitHubPages ? [
+      ["/", `${githubProjectBase}/`],
+      ["/about", `${githubProjectBase}/html/about.html`],
+      ["/residential-cleaning", `${githubProjectBase}/html/residential-cleaning.html`],
+      ["/commercial-cleaning", `${githubProjectBase}/html/commercial-cleaning.html`],
+      ["/contact", `${githubProjectBase}/html/contact.html`],
+      ["/request-a-quote", `${githubProjectBase}/html/request-a-quote.html`],
+      ["/privacy-policy", `${githubProjectBase}/html/privacy-policy.html`]
     ] : [
       ["/", "/"],
       ["/about", "/html/about.html"],
@@ -29,11 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('a[href^="/"]').forEach((link) => {
       const destination = new URL(link.getAttribute("href"), "https://sereniteescleaning.ca");
-      const localPath = localPreviewRoutes.get(destination.pathname);
+      const previewPath = previewRoutes.get(destination.pathname);
 
-      if (!localPath) return;
+      if (!previewPath) return;
 
-      link.setAttribute("href", `${localPath}${destination.search}${destination.hash}`);
+      link.setAttribute("href", `${previewPath}${destination.search}${destination.hash}`);
     });
   }
 

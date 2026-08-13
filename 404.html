@@ -10,7 +10,15 @@
 
   <script>
     const pageBase = document.createElement("base");
-    pageBase.href = window.location.protocol === "file:" ? "./" : "/";
+    const isGitHubPagesPreview = window.location.hostname.toLowerCase().endsWith(".github.io");
+    const githubRepository = isGitHubPagesPreview
+      ? window.location.pathname.split("/").filter(Boolean)[0]
+      : "";
+    pageBase.href = window.location.protocol === "file:"
+      ? "./"
+      : githubRepository
+        ? `/${githubRepository}/`
+        : "/";
     document.head.append(pageBase);
   </script>
   <link rel="icon" href="media/logo/favicon.webp" type="image/webp">
