@@ -44,7 +44,11 @@
     </section>
   </main>
   <script>
-    if (window.location.protocol === "file:") {
+    const productionHosts = new Set(["sereniteescleaning.ca", "www.sereniteescleaning.ca"]);
+    const useProjectFileLinks = window.location.protocol === "file:"
+      || !productionHosts.has(window.location.hostname.toLowerCase());
+
+    if (useProjectFileLinks) {
       document.querySelectorAll("[data-file-href]").forEach((link) => {
         link.setAttribute("href", link.dataset.fileHref);
       });
