@@ -77,7 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const updateServiceFields = () => {
-    toggleConditionalFields(residentialFields, serviceSelect.value === "residential");
+    const isResidentialProperty = serviceSelect.value === "residential" || serviceSelect.value === "airbnb";
+
+    toggleConditionalFields(residentialFields, isResidentialProperty);
     toggleConditionalFields(commercialFields, serviceSelect.value === "commercial");
   };
 
@@ -102,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const selectedService = new URLSearchParams(window.location.search).get("service");
 
-  if (selectedService === "residential" || selectedService === "commercial") {
+  if (["residential", "airbnb", "commercial"].includes(selectedService)) {
     serviceSelect.value = selectedService;
   }
 
