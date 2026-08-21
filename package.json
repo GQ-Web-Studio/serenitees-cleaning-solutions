@@ -2,6 +2,7 @@
   "name": "serenitees-cleaning-solutions",
   "private": true,
   "scripts": {
-    "preview": "node server.mjs"
+    "preview": "node server.mjs",
+    "check": "node --check js/script.js && node --check js/request-a-quote.js && node --check server.mjs"
   }
 }

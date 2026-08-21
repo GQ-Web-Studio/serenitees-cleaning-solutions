@@ -16,9 +16,10 @@
   <link rel="icon" href="../media/logo/favicon.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="../media/static-images/residential/image-7.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../media/static-images/residential/image-7.webp" type="image/webp" media="(min-width: 841px)" fetchpriority="high">
+  <link rel="preload" as="image" href="../media/static-images/residential/image-7-mobile.webp" type="image/webp" media="(max-width: 840px)" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=20260815-47">
+  <link rel="stylesheet" href="../css/style.css?v=20260821-49">
 
   <meta property="og:site_name" content="Serenitees Cleaning Solutions">
   <meta property="og:locale" content="en_CA">
@@ -83,18 +84,18 @@
   }
   </script>
 
-  <script type="module" src="../js/vendor/model-viewer.min.js"></script>
-  <script src="../js/script.js?v=20260813-18" defer></script>
+  <script src="../js/script.js?v=20260821-20" defer></script>
 </head>
 <body class="home-page site-experience residential-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="homepage-progress" aria-hidden="true">
     <span class="homepage-progress__bar" data-home-progress></span>
   </div>
   <header class="site-header" data-site-header>
     <div class="site-header__inner">
       <a class="site-header__logo-link" href="/" aria-label="Serenitees Cleaning Solutions home">
-        <img class="site-header__logo site-header__logo--desktop" src="../media/logo/logo.webp" alt="" width="1660" height="1620">
-        <img class="site-header__logo site-header__logo--mobile" src="../media/logo/favicon.webp" alt="" width="2400" height="2400">
+        <img class="site-header__logo site-header__logo--desktop" src="../media/logo/logo.webp" alt="" width="1024" height="999">
+        <img class="site-header__logo site-header__logo--mobile" src="../media/logo/favicon.webp" alt="" width="512" height="512">
       </a>
 
       <nav class="site-header__nav" aria-label="Primary navigation">
@@ -102,7 +103,7 @@
           <li><a class="site-header__nav-link" href="/">Home</a></li>
           <li><a class="site-header__nav-link" href="/about">About</a></li>
           <li class="site-header__services-menu" data-services-menu>
-            <button class="site-header__nav-link site-header__services-toggle" type="button" aria-expanded="false" aria-controls="desktop-services-menu" data-services-toggle>Services</button>
+            <button class="site-header__nav-link site-header__services-toggle" type="button" aria-expanded="false" aria-controls="desktop-services-menu" aria-haspopup="true" data-services-toggle>Services</button>
             <ul class="site-header__services-submenu" id="desktop-services-menu" hidden data-services-submenu>
               <li><a href="/residential-cleaning" aria-current="page">Residential Cleaning</a></li>
               <li><a href="/commercial-cleaning">Commercial Cleaning</a></li>
@@ -128,7 +129,7 @@
         <li><a class="site-header__mobile-nav-link" href="/">Home</a></li>
         <li><a class="site-header__mobile-nav-link" href="/about">About</a></li>
         <li class="site-header__mobile-services-menu" data-services-menu>
-          <button class="site-header__mobile-nav-link site-header__services-toggle" type="button" aria-expanded="false" aria-controls="mobile-services-menu" data-services-toggle>Services</button>
+          <button class="site-header__mobile-nav-link site-header__services-toggle" type="button" aria-expanded="false" aria-controls="mobile-services-menu" aria-haspopup="true" data-services-toggle>Services</button>
           <ul class="site-header__mobile-services-submenu" id="mobile-services-menu" hidden data-services-submenu>
             <li><a class="site-header__mobile-nav-link" href="/residential-cleaning" aria-current="page">Residential Cleaning</a></li>
             <li><a class="site-header__mobile-nav-link" href="/commercial-cleaning">Commercial Cleaning</a></li>
@@ -212,7 +213,7 @@
         </div>
 
         <div class="home-about__media" data-reveal-item>
-          <img class="home-about__image" src="../media/static-images/residential/image-11.webp" alt="A fresh and comfortable professionally cleaned home" width="2400" height="1600" loading="lazy" decoding="async">
+          <img class="home-about__image" src="../media/static-images/residential/image-11.webp" alt="A fresh and comfortable professionally cleaned home" width="1600" height="1067" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -379,7 +380,7 @@
       </div>
 
       <div class="process-strip__broom" aria-hidden="true" data-process-broom>
-        <model-viewer class="process-strip__broom-model" src="../media/3d-objects/broom.glb" alt="" loading="eager" interaction-prompt="none" camera-target="0m 8m 0m" camera-orbit="25deg 75deg 30%" min-camera-orbit="auto auto 5%" max-camera-orbit="auto auto 200%" field-of-view="20deg" orientation="0deg 0deg 0deg" auto-rotate auto-rotate-delay="0" rotation-per-second="180deg" tone-mapping="commerce" exposure="1.1" data-process-broom-model></model-viewer>
+        <model-viewer class="process-strip__broom-model" src="../media/3d-objects/broom.glb" alt="" loading="eager" interaction-prompt="none" camera-target="0m 8m 0m" camera-orbit="25deg 75deg 30%" min-camera-orbit="auto auto 5%" max-camera-orbit="auto auto 200%" field-of-view="20deg" orientation="0deg 0deg 0deg" auto-rotate auto-rotate-delay="0" rotation-per-second="180deg" tone-mapping="commerce" exposure="1.1" data-model-viewer-library="../js/vendor/model-viewer.min.js?v=20260821-1" data-process-broom-model></model-viewer>
       </div>
     </section>
 
@@ -397,7 +398,7 @@
             </div>
 
             <div class="areas-served__media">
-              <img class="areas-served__image" src="../media/static-images/area/durham-region.webp" alt="A view across Durham Region" width="1300" height="778" loading="lazy" decoding="async">
+              <img class="areas-served__image" src="../media/static-images/area/durham-region.webp" alt="A view across Durham Region" width="1100" height="658" loading="lazy" decoding="async">
             </div>
           </article>
 
@@ -508,7 +509,7 @@
     <section class="home-about home-cta" aria-labelledby="residential-cta-title" data-page-section="06" data-reveal-group>
       <div class="home-about__inner">
         <div class="home-about__media" data-reveal-item>
-          <img class="home-about__image" src="../media/static-images/residential/image-14.webp" alt="A bright, clean, and calming residential living space" width="2000" height="1333" loading="lazy" decoding="async">
+          <img class="home-about__image" src="../media/static-images/residential/image-14.webp" alt="A bright, clean, and calming residential living space" width="1600" height="1066" loading="lazy" decoding="async">
         </div>
 
         <div class="home-about__content">

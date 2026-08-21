@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = header.querySelector("[data-mobile-menu]");
   const servicesMenus = header.querySelectorAll("[data-services-menu]");
   const desktopMedia = window.matchMedia("(min-width: 841px)");
+  const reducedMotionMedia = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   const setServicesMenuState = (menu, isOpen) => {
     const toggle = menu.querySelector("[data-services-toggle]");
@@ -75,8 +76,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  let headerFrame = 0;
+
   const updateScrolledState = () => {
+    headerFrame = 0;
     header.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+
+  const queueScrolledStateUpdate = () => {
+    if (headerFrame) return;
+    headerFrame = window.requestAnimationFrame(updateScrolledState);
   };
 
   const closeMenu = ({ returnFocus = false } = {}) => {
@@ -104,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   updateScrolledState();
-  window.addEventListener("scroll", updateScrolledState, { passive: true });
+  window.addEventListener("scroll", queueScrolledStateUpdate, { passive: true });
 
   const syncRestoredScrollState = () => {
     window.requestAnimationFrame(updateScrolledState);
@@ -121,6 +130,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const willOpen = toggle.getAttribute("aria-expanded") !== "true";
       closeServicesMenus(menu);
       setServicesMenuState(menu, willOpen);
+    });
+
+    menu.addEventListener("focusout", (event) => {
+      if (!menu.contains(event.relatedTarget)) setServicesMenuState(menu, false);
     });
   });
 
@@ -149,11 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
     updateHomeProgress();
   }
 
-  const inPageScrollLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+  const inPageScrollLinks = document.querySelectorAll('a[href^="#"]:not([href="#"]):not(.skip-link)');
   let sectionScrollFrame = 0;
 
   const scrollToSection = (targetSection) => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (reducedMotionMedia.matches) {
       targetSection.scrollIntoView({ behavior: "auto", block: "start" });
       return;
     }
@@ -250,10 +263,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   desktopMedia.addEventListener?.("change", handleBreakpointChange);
 
-  document.querySelectorAll(".site-footer__panel, .site-footer__bottom").forEach((footerItem) => {
-    footerItem.setAttribute("data-reveal-item", "");
-  });
-
   const revealItems = document.querySelectorAll("[data-reveal-item]");
 
   if (revealItems.length) {
@@ -304,12 +313,90 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  const deferredVideos = document.querySelectorAll("[data-deferred-video]");
+
+  if (deferredVideos.length) {
+    const playDeferredVideo = (video) => {
+      if (document.hidden) return;
+
+      if (reducedMotionMedia.matches) {
+        if (video.readyState === 0) video.load();
+        return;
+      }
+      const playback = video.play();
+      playback?.catch(() => {});
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      deferredVideos.forEach(playDeferredVideo);
+    } else {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+
+          if (entry.isIntersecting) {
+            playDeferredVideo(video);
+          } else {
+            video.pause();
+          }
+        });
+      }, {
+        threshold: 0.01,
+        rootMargin: "100px 0px"
+      });
+
+      deferredVideos.forEach((video) => videoObserver.observe(video));
+
+      document.addEventListener("visibilitychange", () => {
+        deferredVideos.forEach((video) => {
+          if (document.hidden) {
+            video.pause();
+            return;
+          }
+
+          const videoRect = video.getBoundingClientRect();
+          const isNearViewport = videoRect.bottom > -100
+            && videoRect.top < window.innerHeight + 100;
+
+          if (isNearViewport) playDeferredVideo(video);
+        });
+      });
+    }
+  }
   const processStrip = document.querySelector(".process-strip");
   const processBroom = processStrip?.querySelector("[data-process-broom]");
   const processBroomModel = processBroom?.querySelector("[data-process-broom-model]");
-  const reducedMotionMedia = window.matchMedia("(prefers-reduced-motion: reduce)");
   const mobileBroomMedia = window.matchMedia("(max-width: 760px)");
 
+  if (processStrip && processBroomModel && !window.customElements?.get("model-viewer")) {
+    const modelViewerLibrary = processBroomModel.dataset.modelViewerLibrary;
+
+    const loadModelViewer = () => {
+      if (!modelViewerLibrary || window.customElements?.get("model-viewer")) return;
+      if (document.querySelector("script[data-model-viewer-runtime]")) return;
+
+      const modelViewerScript = document.createElement("script");
+      modelViewerScript.type = "module";
+      modelViewerScript.src = modelViewerLibrary;
+      modelViewerScript.dataset.modelViewerRuntime = "";
+      document.head.append(modelViewerScript);
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      loadModelViewer();
+    } else {
+      const modelViewerObserver = new IntersectionObserver((entries, observer) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        loadModelViewer();
+      }, {
+        rootMargin: "1000px 0px",
+        threshold: 0
+      });
+
+      modelViewerObserver.observe(processStrip);
+    }
+  }
   if (processStrip && processBroom && processBroomModel) {
     let broomFrame = 0;
 

@@ -16,9 +16,10 @@
   <link rel="icon" href="../media/logo/favicon.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="../media/static-images/residential/image-5.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="../media/static-images/residential/image-5.webp" type="image/webp" media="(min-width: 841px)" fetchpriority="high">
+  <link rel="preload" as="image" href="../media/static-images/residential/image-5-mobile.webp" type="image/webp" media="(max-width: 840px)" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=20260815-47">
+  <link rel="stylesheet" href="../css/style.css?v=20260821-49">
 
   <meta property="og:site_name" content="Serenitees Cleaning Solutions">
   <meta property="og:locale" content="en_CA">
@@ -61,17 +62,18 @@
   }
   </script>
 
-  <script src="../js/script.js?v=20260813-18" defer></script>
+  <script src="../js/script.js?v=20260821-20" defer></script>
 </head>
 <body class="home-page site-experience about-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="homepage-progress" aria-hidden="true">
     <span class="homepage-progress__bar" data-home-progress></span>
   </div>
   <header class="site-header" data-site-header>
     <div class="site-header__inner">
       <a class="site-header__logo-link" href="/" aria-label="Serenitees Cleaning Solutions home">
-        <img class="site-header__logo site-header__logo--desktop" src="../media/logo/logo.webp" alt="" width="1660" height="1620">
-        <img class="site-header__logo site-header__logo--mobile" src="../media/logo/favicon.webp" alt="" width="2400" height="2400">
+        <img class="site-header__logo site-header__logo--desktop" src="../media/logo/logo.webp" alt="" width="1024" height="999">
+        <img class="site-header__logo site-header__logo--mobile" src="../media/logo/favicon.webp" alt="" width="512" height="512">
       </a>
 
       <nav class="site-header__nav" aria-label="Primary navigation">
@@ -79,7 +81,7 @@
           <li><a class="site-header__nav-link" href="/">Home</a></li>
           <li><a class="site-header__nav-link" href="/about" aria-current="page">About</a></li>
           <li class="site-header__services-menu" data-services-menu>
-            <button class="site-header__nav-link site-header__services-toggle" type="button" aria-expanded="false" aria-controls="desktop-services-menu" data-services-toggle>Services</button>
+            <button class="site-header__nav-link site-header__services-toggle" type="button" aria-expanded="false" aria-controls="desktop-services-menu" aria-haspopup="true" data-services-toggle>Services</button>
             <ul class="site-header__services-submenu" id="desktop-services-menu" hidden data-services-submenu>
               <li><a href="/residential-cleaning">Residential Cleaning</a></li>
               <li><a href="/commercial-cleaning">Commercial Cleaning</a></li>
@@ -105,7 +107,7 @@
         <li><a class="site-header__mobile-nav-link" href="/">Home</a></li>
         <li><a class="site-header__mobile-nav-link" href="/about" aria-current="page">About</a></li>
         <li class="site-header__mobile-services-menu" data-services-menu>
-          <button class="site-header__mobile-nav-link site-header__services-toggle" type="button" aria-expanded="false" aria-controls="mobile-services-menu" data-services-toggle>Services</button>
+          <button class="site-header__mobile-nav-link site-header__services-toggle" type="button" aria-expanded="false" aria-controls="mobile-services-menu" aria-haspopup="true" data-services-toggle>Services</button>
           <ul class="site-header__mobile-services-submenu" id="mobile-services-menu" hidden data-services-submenu>
             <li><a class="site-header__mobile-nav-link" href="/residential-cleaning">Residential Cleaning</a></li>
             <li><a class="site-header__mobile-nav-link" href="/commercial-cleaning">Commercial Cleaning</a></li>
@@ -187,7 +189,7 @@
 
         <div class="home-about__media about-video-media about-video-media--who" data-reveal-item>
           <div class="about-video-frame">
-            <video class="home-about__image" autoplay muted loop playsinline preload="metadata" aria-label="Serenitees Cleaning Solutions caring for a professionally cleaned space">
+            <video class="home-about__image" width="1280" height="720" muted loop playsinline preload="none" data-deferred-video aria-label="Serenitees Cleaning Solutions caring for a professionally cleaned space">
               <source src="../media/videos/video-15.mp4" type="video/mp4">
             </video>
           </div>
@@ -199,7 +201,7 @@
       <div class="home-about__inner">
         <div class="home-about__media about-video-media about-video-media--story" data-reveal-item>
           <div class="about-video-frame">
-            <video class="home-about__image" autoplay muted loop playsinline preload="metadata" aria-label="The story and care behind Serenitees Cleaning Solutions">
+            <video class="home-about__image" width="1280" height="720" muted loop playsinline preload="none" data-deferred-video aria-label="The story and care behind Serenitees Cleaning Solutions">
               <source src="../media/videos/video-14-trimmed.mp4" type="video/mp4">
             </video>
           </div>

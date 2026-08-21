@@ -16,6 +16,16 @@ const cleanRoutes = new Map([
   ["/privacy-policy", "html/privacy-policy.html"]
 ]);
 
+const legacyRoutes = new Map([
+  ["/index.html", "/"],
+  ...Array.from(cleanRoutes.keys())
+    .filter((route) => route !== "/")
+    .flatMap((route) => [
+      [`${route}.html`, route],
+      [`/html${route}.html`, route]
+    ])
+]);
+
 const contentTypes = new Map([
   [".css", "text/css; charset=utf-8"],
   [".glb", "model/gltf-binary"],
@@ -69,7 +79,22 @@ const server = createServer(async (request, response) => {
     }
 
     const requestUrl = new URL(request.url ?? "/", `http://${request.headers.host ?? "127.0.0.1"}`);
-    const pathname = decodeURIComponent(requestUrl.pathname).replace(/\/+$/, "") || "/";
+    const requestedPathname = decodeURIComponent(requestUrl.pathname);
+    const pathname = requestedPathname.replace(/\/+$/, "") || "/";
+    const legacyRoute = legacyRoutes.get(pathname);
+
+    if (legacyRoute) {
+      response.writeHead(301, { Location: `${legacyRoute}${requestUrl.search}` });
+      response.end();
+      return;
+    }
+
+    if (requestedPathname !== pathname) {
+      response.writeHead(301, { Location: `${pathname}${requestUrl.search}` });
+      response.end();
+      return;
+    }
+
     const routeFile = cleanRoutes.get(pathname);
 
     if (routeFile && await sendFile(response, routeFile, 200, method)) {

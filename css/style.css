@@ -100,6 +100,29 @@ html,
   outline: none;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2000;
+  padding: 0.75rem 1rem;
+  color: #fafafa;
+  font: 700 0.9rem/1 "Manrope", sans-serif;
+  text-decoration: none;
+  background-color: #3d817f;
+  border: 2px solid #d6a44a;
+  border-radius: 0.65rem;
+  box-shadow: 0 8px 24px rgba(11, 9, 11, 0.2);
+  transform: translateY(calc(-100% - 1.5rem));
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus-visible {
+  outline: 3px solid #fafafa;
+  outline-offset: 3px;
+  transform: translateY(0);
+}
+
 .site-header__logo-link {
   display: inline-flex;
   align-items: flex-start;
@@ -429,6 +452,28 @@ html,
 
 .contact-hero {
   background-image: url("../media/static-images/other/telephone.webp");
+}
+
+@media (max-width: 840px) {
+  .home-hero {
+    background-image: url("../media/static-images/residential/image-16-mobile.webp");
+  }
+
+  .residential-hero {
+    background-image: url("../media/static-images/residential/image-7-mobile.webp");
+  }
+
+  .commercial-hero {
+    background-image: url("../media/static-images/commercial/image-10.webp");
+  }
+
+  .about-hero {
+    background-image: url("../media/static-images/residential/image-5-mobile.webp");
+  }
+
+  .contact-hero {
+    background-image: url("../media/static-images/other/telephone-mobile.webp");
+  }
 }
 
 .home-hero::before {
